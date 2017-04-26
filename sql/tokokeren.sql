@@ -136,36 +136,44 @@ CREATE TABLE PROMO_PRODUK(
 );
 
 CREATE TABLE ULASAN (
-	email_pembeli,
-	kode_produk,
-	tanggal,
-	rating,
-	komentar,
-	PRIMARY KEY,
-	FOREIGN KEY,
-	FOREIGN KEY
+	email_pembeli VARCHAR(50),
+	kode_produk CHAR(8),
+	tanggal DATE NOT NULL,
+	rating INT NOT NULL,
+	komentar TEXT,
+	PRIMARY KEY (email_pembeli,kode_produk),
+	FOREIGN KEY (email_pembeli) REFERENCES ON PELANGGAN(email),
+	FOREIGN KEY (kode_produk) REFERENCES ON SHIPPED_PRODUK(kode_produk)
 );
 CREATE TABLE KOMENTAR_DISKUSI (
-	pengirim,
-	penerima,
-	waktu,
-	komentar,
+	pengirim VARCHAR(50) ,
+	penerima VARCHAR(50),
+	waktu TIMESTAMP,
+	komentar TEXT NOT NULL,
+	PRIMARY KEY (pengirim,penerima,waktu),
+	FOREIGN KEY (pengirim) REFERENCES ON PELANGGAN(nama)
+	FOREIGN KEY (penerima) REFERENCES ON PELANGGAN(nama)
 );
+
 CREATE TABLE LIST_ITEM (
-	no_invoice,
-	kode_produk,
-	berat,
-	kuantitas,
-	harga,
-	sub_total
+	no_invoice CHAR(10),
+	kode_produk CHAR(8),
+	berat INT ,
+	kuantitas INT,
+	harga NUMERIC (10,2),
+	sub_total NUMERIC(10,2),
+	PRIMARY KEY (no_invoice, kode_produk),
+	FOREIGN KEY (no_invoice) REFERENCES ON TRANSAKSI_SHIPPED(no_invoice),
+	FOREIGN KEY (kode_produk) REFERENCES ON SHIPPED_PRODUK(kode_produk)
 );
 CREATE TABLE KERANJANG_BELANJA (
-	pembeli,
-	kode_produk,
-	berat,
-	kuantitas,
-	harga,
-	sub_total
-	PRIMARY KEY
-	FOREIGN KEY
+	pembeli VARCHAR(50),
+	kode_produk CHAR(8),
+	berat int NOT NULL,
+	kuantitas INT NOT NULL,
+	harga NUMERIC (10,2) NOT NULL,
+	sub_total NUMERIC(10,2) NOT NULL,
+	PRIMARY KEY (pembeli,kode_produk),
+	FOREIGN KEY (pembeli) REFERENCES ON PELANGGAN(nama),
+	FOREIGN KEY (kode_produk) REFERENCES ON SHIPPED_PRODUK(kode_produk)
 );
