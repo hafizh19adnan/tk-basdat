@@ -104,23 +104,68 @@ CREATE TABLE TRANSAKSI_SHIPPED(
 	FOREIGN KEY
 );
 CREATE TABLE TRANSAKSI_PULSA (
-	
+	no_invoice CHAR(10),
+	tanggal DATE NOT NULL,
+	waktu_bayar TIMESTAMP,
+	status SMALLINT,
+	total_bayar NUMERIC(10,2) NOT NULL,
+	email_pembeli VARCHAR(50) NOT NULL,
+	nominal INT NOT NULL,
+	nomor VARCHAR(20) NOT NULL,
+	kode_produk CHAR(8) NOT NULL,
+	PRIMARY KEY (no_invoice),
+	FOREIGN KEY (email_pembeli) REFERENCES ON PELANGGAN(email) ON UPDATE CASCADE ON DELETE CASCADE,
+	FOREIGN KEY (kode_produk) REFERENCES ON PRODUK_PULSA(kode_produk) ON UPDATE CASCADE ON DELETE CASCADE
 );
+
 CREATE TABLE PROMO (
-	
+	id CHAR(6),
+	deskripsi text,
+	periode_awal DATE NOT NULL,
+	periode_akhir DATE NOT NULL,
+	kode VARCHAR(20) NOT NULL,
+	PRIMARY KEY(id)
 );
+
 CREATE TABLE PROMO_PRODUK(
-
+	id_promo CHAR(6),
+	kode_produk CHAR(8),
+	PRIMARY KEY(id_promo, kode_produk),
+	FOREIGN KEY (id_promo) REFERENCES ON PROMO(id) ON UPDATE CASCADE ON DELETE CASCADE,
+	FOREIGN KEY (kode_produk) REFERENCES ON PRODUK(kode_produk)	ON UPDATE CASCADE ON DELETE CASCADE	
 );
-CREATE TABLE ULASAN (
 
+CREATE TABLE ULASAN (
+	email_pembeli,
+	kode_produk,
+	tanggal,
+	rating,
+	komentar,
+	PRIMARY KEY,
+	FOREIGN KEY,
+	FOREIGN KEY
 );
 CREATE TABLE KOMENTAR_DISKUSI (
-
+	pengirim,
+	penerima,
+	waktu,
+	komentar,
 );
 CREATE TABLE LIST_ITEM (
-
+	no_invoice,
+	kode_produk,
+	berat,
+	kuantitas,
+	harga,
+	sub_total
 );
 CREATE TABLE KERANJANG_BELANJA (
-
+	pembeli,
+	kode_produk,
+	berat,
+	kuantitas,
+	harga,
+	sub_total
+	PRIMARY KEY
+	FOREIGN KEY
 );
