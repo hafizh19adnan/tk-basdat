@@ -1,0 +1,40 @@
+/* INSERT QUERY */
+INSERT INTO JASA_KIRIM(nama, lama_kirim, tarif)
+VALUES
+('JNE REGULER', 3, 8000);
+/* INSERT QUERY */
+INSERT INTO JASA_KIRIM(nama, lama_kirim, tarif)
+VALUES
+('JNE YES', 2, 15000);
+/* INSERT QUERY */
+INSERT INTO JASA_KIRIM(nama, lama_kirim, tarif)
+VALUES
+('JNE OKE', 4, 5000);
+/* INSERT QUERY */
+INSERT INTO JASA_KIRIM(nama, lama_kirim, tarif)
+VALUES
+('TIKI REGULER', 3, 9000);
+/* INSERT QUERY */
+INSERT INTO JASA_KIRIM(nama, lama_kirim, tarif)
+VALUES
+('POS PAKET BIASA', 3, 7000);
+/* INSERT QUERY */
+INSERT INTO JASA_KIRIM(nama, lama_kirim, tarif)
+VALUES
+('POS PAKET KILAT', 2, 12000);
+/* INSERT QUERY */
+INSERT INTO JASA_KIRIM(nama, lama_kirim, tarif)
+VALUES
+('WAHANA', 3, 8000);
+/* INSERT QUERY */
+INSERT INTO JASA_KIRIM(nama, lama_kirim, tarif)
+VALUES
+('J&T EXPRESS', 2, 14000);
+/* INSERT QUERY */
+INSERT INTO JASA_KIRIM(nama, lama_kirim, tarif)
+VALUES
+('PAHALA', 3, 7000);
+/* INSERT QUERY */
+INSERT INTO JASA_KIRIM(nama, lama_kirim, tarif)
+VALUES
+('LION PARCEL', 3, 10000);
