@@ -1,17 +1,3 @@
-/* CREATE TABLE */
-CREATE TABLE IF NOT EXISTS SHIPPED_PRODUK(
-kode_produk VARCHAR(100),
-kategori VARCHAR(100),
-nama_toko VARCHAR(100),
-is_asuransi VARCHAR(100),
-stok DECIMAL(10, 2),
-is_baru VARCHAR(100),
-min_order DECIMAL(10, 2),
-min_grosir DECIMAL(10, 2),
-max_grosir DECIMAL(10, 2),
-harga_grosir DECIMAL(10, 2),
-foto VARCHAR(100)
-);
 /* INSERT QUERY */
 INSERT INTO SHIPPED_PRODUK(
 kode_produk, kategori, nama_toko,

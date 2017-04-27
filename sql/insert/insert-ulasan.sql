@@ -1,11 +1,3 @@
-/* CREATE TABLE */
-CREATE TABLE IF NOT EXISTS ULASAN(
-email_pembeli VARCHAR(100),
-kode_produk VARCHAR(100),
-tanggal VARCHAR(100),
-rating DECIMAL(10, 2),
-komentar VARCHAR(100)
-);
 /* INSERT QUERY */
 INSERT INTO ULASAN(
 email_pembeli, kode_produk, tanggal,

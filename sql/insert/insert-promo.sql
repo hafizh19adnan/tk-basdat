@@ -1,11 +1,3 @@
-/* CREATE TABLE */
-CREATE TABLE IF NOT EXISTS PROMO(
-id VARCHAR(100),
-deskripsi VARCHAR(100),
-periode_awal VARCHAR(100),
-periode_akhir VARCHAR(100),
-kode VARCHAR(100)
-);
 /* INSERT QUERY */
 INSERT INTO PROMO(
 id, deskripsi, periode_awal, periode_akhir,

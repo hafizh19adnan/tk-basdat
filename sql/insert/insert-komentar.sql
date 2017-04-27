@@ -1,10 +1,3 @@
-/* CREATE TABLE */
-CREATE TABLE IF NOT EXISTS KOMENTAR(
-pengirim VARCHAR(100),
-penerima VARCHAR(100),
-waktu VARCHAR(100),
-komentar VARCHAR(100)
-);
 /* INSERT QUERY */
 INSERT INTO KOMENTAR(
 pengirim, penerima, waktu, komentar

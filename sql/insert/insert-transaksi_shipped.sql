@@ -1,17 +1,3 @@
-/* CREATE TABLE */
-CREATE TABLE IF NOT EXISTS TRANSAKSI_SHIPPED(
-email_pembeli VARCHAR(100),
-no_invoice VARCHAR(100),
-tanggal VARCHAR(100),
-waktu_bayar VARCHAR(100),
-status DECIMAL(10, 2),
-total_bayar DECIMAL(10, 2),
-nama_toko VARCHAR(100),
-alamat_kirim VARCHAR(100),
-biaya_kirim DECIMAL(10, 2),
-no_resi VARCHAR(100),
-nama_jasa_kirim VARCHAR(100)
-);
 /* INSERT QUERY */
 INSERT INTO TRANSAKSI_SHIPPED(
 email_pembeli, no_invoice, tanggal,

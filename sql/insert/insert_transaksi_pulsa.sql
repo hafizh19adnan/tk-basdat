@@ -1,15 +1,3 @@
-/* CREATE TABLE */
-CREATE TABLE IF NOT EXISTS TRANSAKSI_PULSA(
-no_invoice VARCHAR(100),
-tanggal VARCHAR(100),
-waktu_bayar VARCHAR(100),
-status DECIMAL(10, 2),
-total_bayar DECIMAL(10, 2),
-email_pembeli VARCHAR(100),
-nominal DECIMAL(10, 2),
-nomor DECIMAL(10, 2),
-kode_produk VARCHAR(100)
-);
 /* INSERT QUERY */
 INSERT INTO TRANSAKSI_PULSA(
 no_invoice, tanggal, waktu_bayar,

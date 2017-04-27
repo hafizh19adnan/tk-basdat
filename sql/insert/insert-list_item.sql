@@ -1,12 +1,3 @@
-/* CREATE TABLE */
-CREATE TABLE IF NOT EXISTS LIST_ITEM(
-no_invoice VARCHAR(100),
-kode_produk VARCHAR(100),
-berat DECIMAL(10, 2),
-kuantitas DECIMAL(10, 2),
-harga DECIMAL(10, 2),
-sub_total DECIMAL(10, 2)
-);
 /* INSERT QUERY */
 INSERT INTO LIST_ITEM(
 no_invoice, kode_produk, berat, kuantitas,

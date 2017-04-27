@@ -1,10 +1,3 @@
-/* CREATE TABLE */
-CREATE TABLE IF NOT EXISTS PRODUK(
-kode_produk VARCHAR(100),
-nama VARCHAR(100),
-harga DECIMAL(10, 2),
-deskripsi VARCHAR(100)
-);
 /* INSERT QUERY */
 INSERT INTO PRODUK(
 kode_produk, nama, harga, deskripsi

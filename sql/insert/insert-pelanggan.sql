@@ -5,16 +5,6 @@ poin
 )
 VALUES
 (
-'ryan@gmai.com', 'FALSE', 'NULL',
-624
-);
-/* INSERT QUERY */
-INSERT INTO PELANGGAN(
-email, is_penjual, nilai_reputasi,
-poin
-)
-VALUES
-(
 'susan@gmail.com', 'FALSE', 'NULL',
 31
 );
