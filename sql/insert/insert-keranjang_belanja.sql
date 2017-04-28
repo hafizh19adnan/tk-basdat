@@ -15,7 +15,7 @@ harga, sub_total
 )
 VALUES
 (
-'nbason37@amazonaws.com', 'SK114',
+'nbason37@amazonaws.com', 'SK119',
 5, 18, 23884, 429912
 );
 /* INSERT QUERY */
@@ -65,7 +65,7 @@ harga, sub_total
 )
 VALUES
 (
-'nbason37@amazonaws.com', 'SK114',
+'nbason37@amazonaws.com', 'SK115',
 5, 18, 23884, 429912
 );
 /* INSERT QUERY */
@@ -115,7 +115,7 @@ harga, sub_total
 )
 VALUES
 (
-'agreensittn@ed.gov', 'SK238', 3,
+'agreensittn@ed.gov', 'SK218', 3,
 15, 65330, 979950
 );
 /* INSERT QUERY */
@@ -356,7 +356,7 @@ harga, sub_total
 VALUES
 (
 'cfirmager13@wunderground.com',
-'SK200', 16, 27, 83259, 2247993
+'SK201', 16, 27, 83259, 2247993
 );
 /* INSERT QUERY */
 INSERT INTO KERANJANG_BELANJA(
@@ -395,7 +395,7 @@ harga, sub_total
 )
 VALUES
 (
-'kvernall22@economist.com', 'SK053',
+'kvernall22@economist.com', 'SK054',
 16, 20, 35191, 703820
 );
 /* INSERT QUERY */
@@ -405,7 +405,7 @@ harga, sub_total
 )
 VALUES
 (
-'mrameau4t@tumblr.com', 'SK026',
+'mrameau4t@tumblr.com', 'SK025',
 12, 22, 68105, 1498310
 );
 /* INSERT QUERY */
@@ -435,7 +435,7 @@ harga, sub_total
 )
 VALUES
 (
-'kalliott2w@cbc.ca', 'SK238', 14,
+'kalliott2w@cbc.ca', 'SK239', 14,
 15, 65330, 979950
 );
 /* INSERT QUERY */
@@ -495,4 +495,5 @@ harga, sub_total
 )
 VALUES
 (
-'kocoskerry2k@washingtonpost.com ',' SK187 ',2,16,28805,460880);
+'bbrunnsteinp@comcast.net','SK187',2,16,28805,460880
+);

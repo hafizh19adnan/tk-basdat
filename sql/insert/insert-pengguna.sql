@@ -1,4 +1,13 @@
-
+/* CREATE TABLE */
+CREATE TABLE IF NOT EXISTS PENGGUNA(
+email VARCHAR(100),
+password VARCHAR(100),
+nama VARCHAR(100),
+jenis_kelamin VARCHAR(100),
+tgl_lahir VARCHAR(100),
+no_telp DECIMAL(10, 2),
+alamat VARCHAR(100)
+);
 /* INSERT QUERY */
 INSERT INTO PENGGUNA(
 email, password, nama, jenis_kelamin,

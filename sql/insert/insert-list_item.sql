@@ -2455,7 +2455,7 @@ harga, sub_total
 )
 VALUES
 (
-'V000000059', 'SK011', 6, 24, 18780,
+'V000000059', 'SK019', 6, 24, 18780,
 450720
 );
 /* INSERT QUERY */
@@ -3135,7 +3135,7 @@ harga, sub_total
 )
 VALUES
 (
-'V000000058', 'SK057', 11, 12, 37738,
+'V000000058', 'SK097', 11, 12, 37738,
 452856
 );
 /* INSERT QUERY */
@@ -3615,7 +3615,7 @@ harga, sub_total
 )
 VALUES
 (
-'V000000144', 'SK213', 12, 20, 18694,
+'V000000144', 'SK218', 12, 20, 18694,
 373880
 );
 /* INSERT QUERY */
@@ -4215,7 +4215,7 @@ harga, sub_total
 )
 VALUES
 (
-'V000000029', 'SK235', 5, 26, 38638,
+'V000000029', 'SK232', 5, 26, 38638,
 1004588
 );
 /* INSERT QUERY */
@@ -4445,7 +4445,7 @@ harga, sub_total
 )
 VALUES
 (
-'V000000080', 'SK080', 15, 15, 19757,
+'V000000080', 'SK084', 15, 15, 19757,
 296355
 );
 /* INSERT QUERY */
@@ -4715,7 +4715,7 @@ harga, sub_total
 )
 VALUES
 (
-'V000000083', 'SK086', 6, 28, 58865,
+'V000000083', 'SK089', 6, 28, 58865,
 1648220
 );
 /* INSERT QUERY */
@@ -4745,7 +4745,7 @@ harga, sub_total
 )
 VALUES
 (
-'V000000021', 'SK122', 6, 2, 93481,
+'V000000021', 'SK124', 6, 2, 93481,
 186962
 );
 /* INSERT QUERY */
@@ -4795,7 +4795,7 @@ harga, sub_total
 )
 VALUES
 (
-'V000000063', 'SK062', 6, 16, 62472,
+'V000000063', 'SK064', 6, 16, 62472,
 999552
 );
 /* INSERT QUERY */
@@ -5455,7 +5455,7 @@ harga, sub_total
 )
 VALUES
 (
-'V000000066', 'SK149', 12, 22, 56009,
+'V000000066', 'SK189', 12, 22, 56009,
 1232198
 );
 /* INSERT QUERY */
@@ -5565,7 +5565,7 @@ harga, sub_total
 )
 VALUES
 (
-'V000000066', 'SK149', 1, 29, 56009,
+'V000000066', 'SK179', 1, 29, 56009,
 1624261
 );
 /* INSERT QUERY */
@@ -5615,7 +5615,7 @@ harga, sub_total
 )
 VALUES
 (
-'V000000033', 'SK039', 8, 26, 94484,
+'V000000033', 'SK089', 8, 26, 94484,
 2456584
 );
 /* INSERT QUERY */
@@ -5865,7 +5865,7 @@ harga, sub_total
 )
 VALUES
 (
-'V000000053', 'SK195', 9, 15, 39802,
+'V000000053', 'SK199', 9, 15, 39802,
 597030
 );
 /* INSERT QUERY */
@@ -7385,7 +7385,7 @@ harga, sub_total
 )
 VALUES
 (
-'V000000105', 'SK210', 3, 17, 35043,
+'V000000105', 'SK213', 3, 17, 35043,
 595731
 );
 /* INSERT QUERY */
@@ -8355,7 +8355,7 @@ harga, sub_total
 )
 VALUES
 (
-'V000000112', 'SK095', 6, 30, 24245,
+'V000000112', 'SK085', 6, 30, 24245,
 727350
 );
 /* INSERT QUERY */
@@ -9755,7 +9755,7 @@ harga, sub_total
 )
 VALUES
 (
-'V000000085', 'SK245', 4, 13, 22287,
+'V000000085', 'SK246', 4, 13, 22287,
 289731
 );
 /* INSERT QUERY */
@@ -9978,3 +9978,23 @@ VALUES
 'V000000040', 'SK091', 10, 9, 35896,
 323064
 );
+INSERT INTO LIST_ITEM(
+no_invoice, kode_produk, berat, kuantitas,
+harga, sub_total
+)
+VALUES
+(
+'V000000041', 'SK191', 10, 9, 35896,
+323064
+);
+
+INSERT INTO LIST_ITEM(
+no_invoice, kode_produk, berat, kuantitas,
+harga, sub_total
+)
+VALUES
+(
+'V000000051', 'SK121', 10, 9, 35896,
+323064
+);
+
