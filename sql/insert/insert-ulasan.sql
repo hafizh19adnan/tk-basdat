@@ -635,17 +635,67 @@ rating, komentar
 )
 VALUES
 (
-'ko' coskerry2k@washingtonpost.com ',' SK167 ',' 5 / 21 / 2016 ',5,' Udah mantep,
-bos.Lanjutkan ');
-/* INSERT QUERY */INSERT INTO ULASAN(email_pembeli,kode_produk,tanggal,rating,komentar) VALUES( ' dstemp71@meetup.com ',' SK141 ',' 10 / 6 / 2016 ',2,' Kurang Bagus.Ccd bet dah ');
-/* INSERT QUERY */INSERT INTO ULASAN(email_pembeli,kode_produk,tanggal,rating,komentar) VALUES( ' ngjerde7w@intel.com ',' SK163 ',' 12 / 22 / 2016 ',3,' Kurang Bagus.Ccd bet dah ');
-/* INSERT QUERY */INSERT INTO ULASAN(email_pembeli,kode_produk,tanggal,rating,komentar) VALUES( ' dbelz7a@posterous.com ',' SK121 ',' 9 / 14 / 2016 ',5,' Udah mantep,
-bos.Lanjutkan ');
-/* INSERT QUERY */INSERT INTO ULASAN(email_pembeli,kode_produk,tanggal,rating,komentar) VALUES( ' grizzardini3a@booking.com ',' SK123 ',' 9 / 2 / 2016 ',9,' Udah mantep,
-bos.Lanjutkan ');
-/* INSERT QUERY */INSERT INTO ULASAN(email_pembeli,kode_produk,tanggal,rating,komentar) VALUES( ' grubin5h@artisteer.com ',' SK215 ',' 2 / 3 / 2017 ',7,' Udah mantep,
-bos.Lanjutkan ');
-/* INSERT QUERY */INSERT INTO ULASAN(email_pembeli,kode_produk,tanggal,rating,komentar) VALUES( ' ko 'coskerry2k@washingtonpost.com',
+'kocoskerry2k@washingtonpost.com',
+'SK167', '5/21/2016', 5, 'Udah mantep,bos. Lanjutkan'
+);
+/* INSERT QUERY */
+INSERT INTO ULASAN(
+email_pembeli, kode_produk, tanggal,
+rating, komentar
+)
+VALUES
+(
+'dstemp71@meetup.com', 'SK141', '10/6/2016',
+2, 'Kurang Bagus. Ccd bet dah'
+);
+/* INSERT QUERY */
+INSERT INTO ULASAN(
+email_pembeli, kode_produk, tanggal,
+rating, komentar
+)
+VALUES
+(
+'ngjerde7w@intel.com', 'SK163', '12/22/2016',
+3, 'Kurang Bagus. Ccd bet dah'
+);
+/* INSERT QUERY */
+INSERT INTO ULASAN(
+email_pembeli, kode_produk, tanggal,
+rating, komentar
+)
+VALUES
+(
+'dbelz7a@posterous.com', 'SK121',
+'9/14/2016', 5, 'Udah mantep,bos. Lanjutkan'
+);
+/* INSERT QUERY */
+INSERT INTO ULASAN(
+email_pembeli, kode_produk, tanggal,
+rating, komentar
+)
+VALUES
+(
+'grizzardini3a@booking.com', 'SK123',
+'9/2/2016', 9, 'Udah mantep,bos. Lanjutkan'
+);
+/* INSERT QUERY */
+INSERT INTO ULASAN(
+email_pembeli, kode_produk, tanggal,
+rating, komentar
+)
+VALUES
+(
+'grubin5h@artisteer.com', 'SK215',
+'2/3/2017', 7, 'Udah mantep,bos. Lanjutkan'
+);
+/* INSERT QUERY */
+INSERT INTO ULASAN(
+email_pembeli, kode_produk, tanggal,
+rating, komentar
+)
+VALUES
+(
+'kocoskerry2k@washingtonpost.com',
 'SK148', '9/11/2016', 3, 'Kurang Bagus. Ccd bet dah'
 );
 /* INSERT QUERY */

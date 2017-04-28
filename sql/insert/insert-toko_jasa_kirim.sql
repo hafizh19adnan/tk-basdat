@@ -453,7 +453,7 @@ VALUES
 /* INSERT QUERY */
 INSERT INTO TOKO_JASA_KIRIM(nama_toko, jasa_kirim)
 VALUES
-('Messiah Shop', 'TIKI REGULER');
+('Messiah Shop', 'JNE YES');
 /* INSERT QUERY */
 INSERT INTO TOKO_JASA_KIRIM(nama_toko, jasa_kirim)
 VALUES
@@ -469,7 +469,7 @@ VALUES
 /* INSERT QUERY */
 INSERT INTO TOKO_JASA_KIRIM(nama_toko, jasa_kirim)
 VALUES
-('Skinder', 'JNE YES');
+('Skinder', 'JNE REGULER');
 /* INSERT QUERY */
 INSERT INTO TOKO_JASA_KIRIM(nama_toko, jasa_kirim)
 VALUES
@@ -489,7 +489,7 @@ VALUES
 /* INSERT QUERY */
 INSERT INTO TOKO_JASA_KIRIM(nama_toko, jasa_kirim)
 VALUES
-('Rhynoodle', 'POS PAKET KILAT');
+('Rhynoodle', 'POS PAKET BIASA');
 /* INSERT QUERY */
 INSERT INTO TOKO_JASA_KIRIM(nama_toko, jasa_kirim)
 VALUES
@@ -521,7 +521,7 @@ VALUES
 /* INSERT QUERY */
 INSERT INTO TOKO_JASA_KIRIM(nama_toko, jasa_kirim)
 VALUES
-('Photojam', 'JNE YES');
+('Photojam', 'JNE REGULER');
 /* INSERT QUERY */
 INSERT INTO TOKO_JASA_KIRIM(nama_toko, jasa_kirim)
 VALUES
@@ -549,7 +549,7 @@ VALUES
 /* INSERT QUERY */
 INSERT INTO TOKO_JASA_KIRIM(nama_toko, jasa_kirim)
 VALUES
-('Rhyloo', 'POS PAKET BIASA');
+('Rhyloo', 'POS PAKET KILAT');
 /* INSERT QUERY */
 INSERT INTO TOKO_JASA_KIRIM(nama_toko, jasa_kirim)
 VALUES
@@ -561,7 +561,7 @@ VALUES
 /* INSERT QUERY */
 INSERT INTO TOKO_JASA_KIRIM(nama_toko, jasa_kirim)
 VALUES
-('Jetwire', 'JNE YES');
+('Jetwire', 'JNE REGULER');
 /* INSERT QUERY */
 INSERT INTO TOKO_JASA_KIRIM(nama_toko, jasa_kirim)
 VALUES
@@ -593,11 +593,11 @@ VALUES
 /* INSERT QUERY */
 INSERT INTO TOKO_JASA_KIRIM(nama_toko, jasa_kirim)
 VALUES
-('Camido', 'TIKI REGULER');
+('Camido', 'POS PAKET KILAT');
 /* INSERT QUERY */
 INSERT INTO TOKO_JASA_KIRIM(nama_toko, jasa_kirim)
 VALUES
-('Youspan', 'JNE YES');
+('Youspan', 'JNE REGULER');
 /* INSERT QUERY */
 INSERT INTO TOKO_JASA_KIRIM(nama_toko, jasa_kirim)
 VALUES
@@ -605,7 +605,7 @@ VALUES
 /* INSERT QUERY */
 INSERT INTO TOKO_JASA_KIRIM(nama_toko, jasa_kirim)
 VALUES
-('Twinte', 'POS PAKET BIASA');
+('Twinte', 'JNE REGULER');
 /* INSERT QUERY */
 INSERT INTO TOKO_JASA_KIRIM(nama_toko, jasa_kirim)
 VALUES

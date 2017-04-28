@@ -249,11 +249,11 @@ VALUES
 /* INSERT QUERY */
 INSERT INTO PROMO_PRODUK(id_promo, kode_produk)
 VALUES
-('R00004', 'SK084');
+('R00004', 'SK085');
 /* INSERT QUERY */
 INSERT INTO PROMO_PRODUK(id_promo, kode_produk)
 VALUES
-('R00001', 'SK158');
+('R00001', 'SK150');
 /* INSERT QUERY */
 INSERT INTO PROMO_PRODUK(id_promo, kode_produk)
 VALUES
