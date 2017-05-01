@@ -89,3 +89,57 @@ mark{
 #feature p{
 	font-size: 12px;
 }
+.img-centered{
+	margin: 0 auto !important;
+
+}
+#bottom{
+	color: #fff;
+	padding: 20px;
+	background: #222;
+}
+#bottom li{
+	list-style-type: none;
+}
+#bottom h3{
+	color: #dfdfdf;
+}
+#bottom li a{
+	color: #fff;
+	list-style-type: none;
+	font-family: 'Raleway';
+	line-height: 2;
+}
+
+/*****DETAIL CONTENT*****/
+#content{
+	background: #eee;
+	padding: 50px;
+}
+.detail-content{
+	background: #fff;
+	margin-bottom: 30px;
+	padding: 20px 0px 20px 0px;
+}
+#content p{
+	font-family: 'Lato';
+}
+#content .btn{
+	border-radius: 0px;
+	padding: 12px;
+}
+.promo{
+	background: #fff7e2;
+	padding: 10px;
+	border: 1px solid #eec65d;
+	margin: 10px 0px 10px 0px;
+}
+.head-tab ul li a{
+	color: #000 ;
+}
+
+footer{
+	padding: 10px;
+	background: #000;
+	color: #dfdfdf;
+}
