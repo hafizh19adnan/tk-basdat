@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:700|Montserrat|Raleway');
+html, body{
+	margin: 0;
+	width: 100%;
+}
+a, p{
+	font-family: 'Montserrat', sans-serif;
+}
+header{
+	background: black;
+}
+.nav li a  {
+	color: #fff;
+}
+#nav-list li a{
+	color: #fff;
+	font-weight: 100px;
+}
+#nav-list li a:hover{
+	background: #eec65d;
+	color: #222222;
+}
+#nav-right li a{
+	color:  #eec65d;
+}
+#headline{
+	padding: 150px;
+	background: url(../images/bg-header.jpg);
+}
+#headline h1{
+	font-family: 'Montserrat';
+	font-size: 4em;
+	color: #fff;
+}
+mark{
+	background: #eec65d;
+	padding: 0px;
+}
+#headline h3{
+	color: #fff;
+}
+#headline button{
+	background: transparent;
+	border: 2px solid #fff;
+	font-size: 1.2em;
+	font-family: 'Lato','Bold';
+
+}
+#headline button:hover{
+	border: 2px solid #eec65d;
+	color: #eec65d;
+}
+
+#highlight{
+	margin-top: -7%;
+}
+.highlight-content{
+	max-height: 340px;
+	overflow: hidden;
+}
+.first {
+	padding: 0;
+}
+.second{
+	padding: 0;
+}
+.third{
+	padding: 0;
+}
