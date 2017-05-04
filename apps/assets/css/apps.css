@@ -9,6 +9,7 @@ h1, h2, h3, h4, h5, a, p{
 }
 header{
 	background: black;
+	color: white;
 }
 .nav li a  {
 	color: #fff;
@@ -144,6 +145,7 @@ mark{
 .head-tab ul li a{
 	color: #000 ;
 }
+
 /*PURCHASE*/
 #purchase{
 	background: #eee;
@@ -160,6 +162,15 @@ mark{
 }
 .form-control{
 	border-radius: 0px;
+}
+#cart{
+	background: #eee;
+	padding: 40px;
+}
+#keranjang{
+	background: #fff;
+	padding: 20px;
+	margin-top: -60px;
 }
 #detail-purchase{
 	background: #fff;
@@ -182,10 +193,10 @@ mark{
 	border-radius: 1px;
 	border: none;
 }
-.dropdown button{
+#produk-shipped .dropdown button{
 	width: 90%;
 }
-.dropdown .dropdown-menu{
+#produk-shipped .dropdown .dropdown-menu{
 	width: 90%;
 }
 .btn-trans-red{
@@ -203,6 +214,11 @@ mark{
 }
 .modal-content{
 	border-radius: 0px;
+}
+
+#user-dashboard{
+	padding: 10px;
+	background: #fff;
 }
 
 label{
