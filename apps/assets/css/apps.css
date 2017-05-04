@@ -60,8 +60,10 @@ mark{
 	overflow: hidden;
 }
 .first {
+	color: #fff;
 	padding: 0;
 }
+
 .second{
 	padding: 0;
 }
@@ -71,8 +73,13 @@ mark{
 #product-list{
 	padding: 30px;
 }
-#product-list .container .col-md-3{
+
+#product-list .container .col-md-6 .thumbnail{
 	margin-bottom: 30px;
+	padding: 20px;
+}
+.btn{
+	border-radius: 0px;
 }
 .btn-detail{
 	border: 2px solid #eec65d;
@@ -83,7 +90,7 @@ mark{
 	color: #000;
 }
 #feature{
-	background: #dfdfdf;
+	background: #fff;
 	padding: 20px;
 }
 #feature p{
@@ -137,7 +144,70 @@ mark{
 .head-tab ul li a{
 	color: #000 ;
 }
+/*PURCHASE*/
+#purchase{
+	background: #eee;
+	padding: 40px;
+}
+#detail-pembeli{
+	background: #fff;
+	padding: 20px;
+}
+#ringkasan-belanja{
+	background: #fff;
+	margin-left: 20px;
+	padding: 20px; 
+}
+.form-control{
+	border-radius: 0px;
+}
+#detail-purchase{
+	background: #fff;
+	padding: 20px;
+}
 
+#headline-shipped{
+	padding: 50px;
+	background: url(../images/bg-header.jpg) fixed center no-repeat;
+	background-size: cover;
+	color: #fff;
+}
+#produk-shipped{
+	padding: 30px;
+}
+#produk-shipped .thumbnail{
+	padding: 10px;
+}
+.btn .btn-select{
+	border-radius: 1px;
+	border: none;
+}
+.dropdown button{
+	width: 90%;
+}
+.dropdown .dropdown-menu{
+	width: 90%;
+}
+.btn-trans-red{
+	background: transparent;
+	padding: 10px;
+	border: 2px solid #d9534f;
+	color: #000;
+}
+.btn-trans-red:hover{
+	background: #d9534f;
+	padding: 10px;
+	border: 2px solid #d9534f;
+	color: #fff;
+	margin: 0 auto;
+}
+.modal-content{
+	border-radius: 0px;
+}
+
+label{
+	font-family: 'Raleway';
+}
 footer{
 	padding: 10px;
 	background: #000;
