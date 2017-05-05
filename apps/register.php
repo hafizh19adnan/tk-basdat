@@ -1,25 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Register |TokoKeren</title>
-	<link rel="shortcut icon" href="assets/images/favicon.png">
-	<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/apps.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script type="text/javascript" src="assets/bootstrap/js/bootstrap.js"></script>
-</head>
-<body>
-	<header>
-		<div class="container" style="margin: 0 auto">
-			<img src="assets/images/logo.png" width="256px">
-		</div>
-	</header>
+<?php
+	include('header.php');
+	include('navbar-default.php');
 
-	<div class="container" align="center">
-			<div id="register-form" class="col-md-7">
-				<div class="tab-content">
-			    	<div id="home" class="tab-pane fade in active">
-			      		<h3>Register Here</h3>
+?>
+
+	<div id="register">
+		<div class="container">
+			<div class="col-md-8">
+				<br>
+				<h1>Register Here</h1><br>
 						<form class="form">
 							<div class="form-group">
 							 	<div class="col-md-12">
@@ -64,11 +53,14 @@
 							</div>
 							<div class="col-md-12">
 								<br>
-								<button id="register-form" class="btn btn-success">DAFTAR</button>							
+								<button id="register-form" class="btn btn-success">DAFTAR</button>			<br>			
 							</div>
 						</form>
-					</div>
-			    </div>
+			</div>
 			
-</body>
-</html>
+		</div>
+	</div>
+<br>
+<?php 
+	include('login.php');
+?>

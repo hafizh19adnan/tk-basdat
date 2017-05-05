@@ -1,52 +1,7 @@
-<html>
-<head>
-	<title>TokoKeren</title>
-	<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/apps.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script type="text/javascript" src="assets/bootstrap/js/bootstrap.js"></script>
-</head>
-<body>
-	<header>
-		<div class="container">
-
-			<img src="assets/images/logo.png" width="256px">
-			<div class="pull-right">
-				<br>
-				<h5>Halo, Hafizh!</h5>
-			</div>
-		</div>
-		
-	</header>
-	<nav class="navbar-inverse navbar-head">
-		<div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        
-      </div>
-      <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav navbar-left" id="nav-list">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="#">Kategori</a></li>
-          <li><a href="#">Promo</a></li>
-          <li><a href="#">Beli Pulsa</a></li>
-          <li><a href="#">Tiket Kereta</a></li>
-          <li><a href="#">Testimoni</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Kontak</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right menu-top-right" id="nav-right">
-        		
-            	<li><a href="#" class="navbar-white login" data-toggle="modal" data-target="#loginModal">  Logout</a></li>
-        	</ul>
-      </div>
-    </div>
-	</nav>	  
+<?php
+    include('header.php');
+    include('navbar.php');
+?> 
 
 	<div id="purchase">
 		<div class="row">
@@ -55,6 +10,7 @@
 				<div class="head-tab">
 			  		<ul class="nav nav-tabs">
 					  	<li class="active"><a data-toggle="tab" href="#home">Detail Pembelian</a></li>
+					  	<li><a data-toggle="tab" href="#home">Konfirmasi Data</a></li>
 					</ul>
 			  	</div>
 				<div class="tab-content">
@@ -136,7 +92,7 @@
 			    	<div id="home" class="tab-pane fade in active">
 			      		<div class="col-md-4">
 			      			<br>
-			      			<img src="assets/images/adidas1.jpg" class="thumbnail img-responsive">	
+			      			<img src="../assets/images/adidas1.jpg" class="thumbnail img-responsive">	
 			      		</div>
 			      		<div class="col-md-8">
 			      			<br>
@@ -149,7 +105,7 @@
 			      		</div>
 			      		<div class="col-md-4">
 			      			<br>
-			      			<img src="assets/images/adidas1.jpg" class="thumbnail img-responsive">	
+			      			<img src="../assets/images/adidas1.jpg" class="thumbnail img-responsive">	
 			      		</div>
 			      		<div class="col-md-8">
 			      			<br>
@@ -172,43 +128,3 @@
 		</div>
 	</div>
 	
-
-
-
-
-	<div id="bottom">
-		<div class="container">
-			<div class="col-md-3">
-				<h3>Ikuti Kami</h3>
-
-			</div>
-			<div class="col-md-3">
-				<h3>TokoKeren</h3>
-
-				<li><a href="#">Tentang Kami</a></li>
-				<li><a href="#">Aturan Pelanggan</a></li>
-				<li><a href="#">Kebijakan Privasi</a></li>
-				<li><a href="#">Berita &amp; Pengumuman</a></li>
-			</div>
-			<div class="col-md-3">
-				<h3>Layanan Pelanggan</h3>
-
-				<li><a href="#">Tentang Kami</a></li>
-				<li><a href="#">Aturan Pelanggan</a></li>
-				<li><a href="#">Kebijakan Privasi</a></li>
-				<li><a href="#">Berita &amp; Pengumuman</a></li>
-			</div>
-			<div class="col-md-3">
-				<h3>Dapatkan Update</h3>
-				<form>
-					<input type="text" name="" placeholder="Email Anda ..">
-					<input type="submit" name="" class="btn btn-warning">
-				</form>
-			</div>
-		</div>
-	</div>
-	<footer>
-		<p class="text-center">Copyright &copy; 2017. PT TokoKeren Indonesia</p>
-	</footer>
-</body>
-</html>

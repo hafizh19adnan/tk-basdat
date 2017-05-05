@@ -220,7 +220,10 @@ mark{
 	padding: 10px;
 	background: #fff;
 }
-
+.full .btn{
+	width: 100%;
+	display: block;
+}
 label{
 	font-family: 'Raleway';
 }

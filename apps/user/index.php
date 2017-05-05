@@ -1,50 +1,8 @@
-<html>
-<head>
-	<title>TokoKeren</title>
-	<link rel="shortcut icon" href="assets/images/favicon.png">
-	<link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/apps.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script type="text/javascript" src="assets/bootstrap/js/bootstrap.js"></script>
-</head>
-<body>
-	<header>
-		<div class="container">
+<?php
+	include('header.php');
+	include('navbar.php');
 
-			<img src="assets/images/logo.png" width="256px">
-			
-		</div>
-		
-	</header>
-	<nav class="navbar-inverse navbar-head">
-		<div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        
-      </div>
-      <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav navbar-left" id="nav-list">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="#">Kategori</a></li>
-          <li><a href="#">Promo</a></li>
-          <li><a href="#">Beli Pulsa</a></li>
-          <li><a href="#">Tiket Kereta</a></li>
-          <li><a href="#">Testimoni</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Kontak</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right menu-top-right" id="nav-right">
-        		<li><a href="#" class="navbar-white login" data-toggle="modal" data-target="#loginModal"> Register</a></li>
-            	<li><a href="#" class="navbar-white login" data-toggle="modal" data-target="#loginModal">  Login</a></li>
-        	</ul>
-      </div>
-    </div>
-	</nav>	  
+?>
 	<div class="row" id="headline">
 		<div class="container">
 			<div class="col-xs-6">
@@ -60,13 +18,13 @@
 			<div class="container">
 				<div class="highlight-content text-center">
 					<div class="col-md-4 first" >
-						<img class="img-responsive" src="assets/images/sepatu.jpg" width="100%">
+						<img class="img-responsive" src="../assets/images/sepatu.jpg" width="100%">
 					</div>
 					<div class="col-md-4 second">
-						<img class="img-responsive" src="assets/images/fashion.jpg" width="100%">
+						<img class="img-responsive" src="../assets/images/fashion.jpg" width="100%">
 					</div>
 					<div class="col-md-4 third">
-						<img class="img-responsive" src="assets/images/elektronik.jpg" width="100%">
+						<img class="img-responsive" src="../assets/images/elektronik.jpg" width="100%">
 					</div>
 				</div>
 			</div>
@@ -78,20 +36,20 @@
 			<h5 class="text-center">Pilih produk terbaik favorit anda</h5><br>
 			<div class="col-md-6">
 				<div class="thumbnail">
-					<img src="assets/images/adidas1.jpg">
+					<img src="../assets/images/adidas1.jpg">
 					<h3>Produk Non-Pulsa</h3>
 					<p>Dapatkan produk non-pulsa dengan diskon yang menarik setiap harinya. Bebas dikirim kemana saja kapan saja sesuai keinginan.</p>
-					<a href="buy-product.html" class="btn btn-lg btn-danger">Beli Sekarang</a>
+					<a href="product.php" class="btn btn-lg btn-danger">Beli Sekarang</a>
 
 				</div>
 			</div>
 			<div class="col-md-6">
 				
 					<div class="thumbnail">
-					<img src="assets/images/xl.jpeg" >
+					<img src="../assets/images/xl.jpeg" >
 					<h3>Produk Pulsa</h3>
 					<p>Dapatkan produk non-pulsa dengan diskon yang menarik setiap harinya. Bebas dikirim kemana saja kapan saja sesuai keinginan.</p>
-					<a href="pulsa.html" class="btn btn-lg btn-danger">Beli Sekarang</a>
+					<a href="pulsa.php" class="btn btn-lg btn-danger">Beli Sekarang</a>
 				</div>
 				
 			</div>
@@ -102,28 +60,29 @@
 			<h2 class="text-center">Kenapa Belanja di TokoKeren?</h2><br>
 			<div class="row">
 				<div class="feature col-md-3 text-center">
-					<img class="img-centered" width="100" src="assets/images/telemarketer.png">
+					<img class="img-centered" width="100" src="../assets/images/telemarketer.png">
 					<h4>Customer Service 24/7</h4>
 					<p>Lorem Ipsum dolor sit amet conectetum. Ipsum dolor sit amet conectetum</p>
 				</div>
 				<div class="col-md-3 text-center">
-					<img class="img-centered" width="100" src="assets/images/money.png">
+					<img class="img-centered" width="100" src="../assets/images/money.png">
 					<h4>Jaminan Uang Kembali</h4>
 					<p>Lorem Ipsum dolor sit amet conectetum. Ipsum dolor sit amet conectetum</p>
 				</div>
 				<div class="col-md-3 text-center">
-					<img class="img-centered" width="100" src="assets/images/price-tag.png">
+					<img class="img-centered" width="100" src="../assets/images/price-tag.png">
 					<h4>Harga Kompetitif</h4>
 					<p>Lorem Ipsum dolor sit amet conectetum. Ipsum dolor sit amet conectetum</p>
 				</div>
 				<div class="col-md-3 text-center">
-					<img class="img-centered" width="100" src="assets/images/thumbs.png">
+					<img class="img-centered" width="100" src="../assets/images/thumbs.png">
 					<h4>Pelapak Terpercaya</h4>
 					<p>Lorem Ipsum dolor sit amet conectetum. Ipsum dolor sit amet conectetum</p>
 				</div>
 			</div>
 		</div>
 	</div>
+
 	<div id="bottom">
 		<div class="container">
 			<div class="col-md-3">
@@ -155,8 +114,7 @@
 			</div>
 		</div>
 	</div>
-	<footer>
-		<p class="text-center">Copyright &copy; 2017. PT TokoKeren Indonesia</p>
-	</footer>
-</body>
-</html>
+<?php
+	include('footer.php');
+	
+?>
