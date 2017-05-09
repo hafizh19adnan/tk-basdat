@@ -24,8 +24,8 @@
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-left" id="nav-list">
           <li><a href="index.php" class="active">Home</a></li>
-          <li><a href="#">Kategori</a></li>
           <li><a href="#">Promo</a></li>
+          <li><a href="product.php">Produk</a></li>
           <li><a href="pulsa.php">Beli Pulsa</a></li>
           <li><a href="#">Testimoni</a></li>
           <li><a href="#">Blog</a></li>

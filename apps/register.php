@@ -9,7 +9,7 @@
 			<div class="col-md-8">
 				<br>
 				<h1>Register Here</h1><br>
-						<form class="form">
+						<form class="form" action="register.php"  >
 							<div class="form-group">
 							 	<div class="col-md-12">
 							 		<label for="email">E-mail:</label>

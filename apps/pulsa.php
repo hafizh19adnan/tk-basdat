@@ -12,50 +12,46 @@
 	</div>
 	<div id="produk-shipped">
 		<div class="row">
-			<div class="container">
-				<h1 class="text-center">Pilih Produk Pulsa</h1>
-				<br>
-				<div class="col-md-4">
+				<div class="col-md-3">
 					<div class="thumbnail">
-					<img src="assets/images/xl.jpeg">
-					<h3>Paket XL 4G Plus</h3>
-					<h5>Rp. 100.000</h5>
-					<p>Kode Produk : P00001</p>
-					<p>Nominal : 50</p>
-					<P>Bonus Kuota 4g LTE tanpa batas</P>
-					<button type="button" data-toggle="modal" data-target="#myModal"  class="btn btn-lg btn-danger">Beli Sekarang</button>
+						<form>
+							<input type="text" name="" class="form-control" placeholder="Cari Produk Pulsa .."><br>
+							<input type="submit" class="form-control btn btn-danger" name="" value="Cari">
+						</form>
 					</div>
 				</div>
-				<div class="col-md-4">
-					<div class="thumbnail">
-					<img src="assets/images/xl.jpeg">
-					<h3>Paket XL 4G Plus</h3>
-					<h5>Rp. 100.000</h5>
-					<p>Kode Produk : P00001</p>
-					<p>Nominal : 50</p>
-					<P>Bonus Kuota 4g LTE tanpa batas</P>
-					<button type="button" data-toggle="modal" data-target="#myModal"  class="btn btn-lg btn-danger">Beli Sekarang</button>
+				<div class="col-md-9">
+					<?php 
+				$conn= pg_connect("host=localhost dbname=hafizhrafizal user=postgres password=basdatkeren");
+        		$query = "SELECT * FROM tokokeren.PRODUK_PULSA S, tokokeren.PRODUK P WHERE P.kode_produk = S.kode_produk ";   			 
+		        $result = pg_query($conn,$query); 
+		       
+
+		       	while ($row = pg_fetch_assoc($result)) {
+				  
+				  echo "<div class='col-md-4'>
+					<div class='thumbnail'>
+					<img src='assets/images/xl.jpeg'>
+					<div class='content'> 
+					<h2>".$row['nama']."</h2>
+					<h5>Rp. ".$row['harga']."</h5>
+					<h5>Kode Produk : ".$row['kode_produk']."</h5>
+					<h5>Nominal : ".$row['nominal']."</h5>";		
+
+					
+					echo "
 					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="thumbnail">
-					<img src="assets/images/xl.jpeg">
-					<h3>Paket XL 4G Plus</h3>
-					<h5>Rp. 100.000</h5>
-					<p>Kode Produk : P00001</p>
-					<p>Nominal : 50</p>
-					<P>Bonus Kuota 4g LTE tanpa batas</P>
-					<button type="button" data-toggle="modal" data-target="#myModal"  class="btn btn-lg btn-danger">Beli Sekarang</button>
+					<a href='#' data-toggle='modal' data-target='#myModal'  class='btn btn-lg btn-danger' class='btn btn-lg btn-danger'>Beli Sekarang</a>
 					</div>
-				</div>
-				 
-				<div class="col-md-12">
-					<a href="#" class="btn-trans-red">Load More ...</a>
-				</div>
-				
+					</div>";
+				}
+
+			?>
+				</div>				
 			</div>
 
 		</div>
+		
 	</div>		 
 
 
@@ -84,8 +80,38 @@
     </div>
   </div>
   
+<div class="modal fade" id="loginModal" role="dialog">
+    <div class="modal-dialog">
+    
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">Login</h3>
+        </div>
+        <div class="modal-body">
+         
+          <form action="login.php" method="post">
+            <div class="form-group">	
+			         <input type="email" name="email" class="form-control" id="email" placeholder="E-Mail">
+  			    </div>
+            <div class="form-group"> 
+               <input type="password" name="password" class="form-control" id="email" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <input type="submit" class="btn btn-danger" name="" value="Login">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+         
+         </div>
+        
+      </div>
+      
+    </div>
+  </div>
 
 <?php
-	include('login.php');
 	include('footer.php');
 ?>

@@ -8,24 +8,6 @@
 		
         return $connection;
 	}
-	function login(){
-		$conn=connectDB();
-		$password='oJAJrvH';
-        $query = "SELECT * FROM tokokeren.PENGGUNA 
-        			WHERE password='$password' AND email NOT IN (SELECT email from TOKOKEREN.PELANGGAN)"; 
-
-        $result = pg_query($conn,$query); 
-        if (!$result) { 
-            echo "Problem with query " . $query . "<br/>"; 
-            echo pg_last_error(); 
-            exit(); 
-        } 
-
-       while ($row = pg_fetch_assoc($result)) {
-		  
-		  echo "<p>".$row['email']."</p>";
-		}
-	}
 	
 	connectDB();
 	include('header.php');

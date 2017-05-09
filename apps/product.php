@@ -12,68 +12,98 @@
 	</div>
 	<div id="produk-shipped">
 		<div class="row">
-			<div class="container">
-				<div class="dropdown">
-				    <button class="btn btn-select dropdown-toggle" type="button" data-toggle="dropdown">Pilih Toko ..
-				    <span class="caret"></span></button>
-				    <ul class="dropdown-menu">
-				      <li><a href="#">Rudy SPort</a></li>
-				      <li><a href="#">Messiah Shop</a></li>
-				      <li><a href="#">Jalang Shop</a></li>
-				    </ul>
-				    <a class="btn btn-danger">Pilih</a>
+				<div class="col-md-3">
+					<div class="thumbnail">
+						<h3>Filter Produk</h3>
+						<form action="product.php" id="filter-toko">
+						   <select name="pilih_toko" class="form-control btn btn-default" id="sel1">
+						   	<option>Semua Toko</option>
+						    <?php
+							    $conn= pg_connect("host=localhost dbname=hafizhrafizal user=postgres password=basdatkeren");
+				        		$query = "SELECT nama FROM Tokokeren.Toko ";   			 
+						        $result = pg_query($conn,$query); 
+						        if (!$result) { 
+						            echo "Problem with query " . $query . "<br/>"; 
+						            echo pg_last_error(); 
+						            exit(); 
+						        } 
+						        while ($row = pg_fetch_assoc($result)) {
+						        	echo "<option>".$row['nama']."</option>";
+						        }
+						    ?>
+						     </select>
+						     <input type="submit" name="" value="Pilih Toko" class="btn btn-danger">	    
+						</form>	
+						<form action="product.php" id="filter-toko">
+						   <select name="pilih_toko" class="form-control btn btn-default" id="sel1">
+						   	<option>Semua Kategori</option>
+						    <?php
+							    $conn= pg_connect("host=localhost dbname=hafizhrafizal user=postgres password=basdatkeren");
+				        		$query = "SELECT nama FROM Tokokeren.Kategori_Utama ";   			 
+						        $result = pg_query($conn,$query); 
+						        while ($row = pg_fetch_assoc($result)) {
+						        	echo "<option>".$row['nama']."</option>";
+						        }
+						    ?>
+						     </select>
+						     <select name="pilih_toko" class="form-control btn btn-default" id="sel1">
+						   	<option>Semua Sub-Kategori</option>
+						    <?php
+							    $conn= pg_connect("host=localhost dbname=hafizhrafizal user=postgres password=basdatkeren");
+				        		$query = "SELECT nama FROM Tokokeren.sub_kategori ";   			 
+						        $result = pg_query($conn,$query); 
+						        while ($row = pg_fetch_assoc($result)) {
+						        	echo "<option>".$row['nama']."</option>";
+						        }
+						    ?>
+						     </select>
+						     <input type="submit" name="" value="Ubah Kategori" class="btn btn-danger">	    
+						</form>	
+					</div>
+				</div>
+				<div class="col-md-9">
+					<?php 
+				$conn= pg_connect("host=localhost dbname=hafizhrafizal user=postgres password=basdatkeren");
+        		$query = "SELECT * FROM tokokeren.SHIPPED_PRODUK S, tokokeren.PRODUK P WHERE P.kode_produk = S.kode_produk ";   			 
+		        $result = pg_query($conn,$query); 
+		       
 
-				 </div>
+		       	while ($row = pg_fetch_assoc($result)) {
+				  $baru = $row['is_baru'];
+				  $asuransi = $row['is_asuransi'];
+				  echo "<div class='col-md-4'>
+					<div class='thumbnail'>
+					<img src='assets/images/adidas1.jpg'>
+					<div class='content'>
+					<h3>".$row['nama']."</h3>
+					<h5>Rp. ".$row['harga']." / <strong>Rp. ".$row['harga_grosir']."(Grosir)</strong></h5>
+					<p>Barang ";
+					if($asuransi=='t'){
+						echo "memiliki asuransi";
+					}else{
+						echo "tidak memiliki asuransi";
+					}	
+					echo ". Tersedia <strong>".$row['stok']." stok barang. </strong> Kondisi barang ";
+					if($baru=='t'){
+						echo "<strong>BARU.</strong></p>";
+					}else{
+						echo "<strong>BEKAS.</strong></p>";
+					}
+					
+					echo "
+					</div>
+					<a href='#' class='btn btn-lg btn-danger'>Beli Sekarang</a>
+					</div>
+					</div>";
+				}
+
+			?>
+				</div>
+					
 				
-			
+				<br>
 				
-				 <h1 class="text-center">Daftar Produk</h1>
-				 <br>
-				<div class="dropdown">
-				    <a class="btn btn-select dropdown-toggle" type="button" data-toggle="dropdown">Pilih Kategori
-				    <span class="caret"></span></button>
-				    <ul class="dropdown-menu">
-				      <li><a href="#">Rudy SPort</a></li>
-				      <li><a href="#">Messiah Shop</a></li>
-				      <li><a href="#">Jalang Shop</a></li>
-				    </ul>
-				    <a class="btn btn-select dropdown-toggle" type="button" data-toggle="dropdown">Pilih Sub Kategori
-				    <span class="caret"></span></button>
-				    <ul class="dropdown-menu">
-				      <li><a href="#">Rudy SPort</a></li>
-				      <li><a href="#">Messiah Shop</a></li>
-				      <li><a href="#">Jalang Shop</a></li>
-				    </ul>
-				    
-				</div>
-				 <br>
-				 <div class="col-md-4">
-					<div class="thumbnail">
-					<img src="assets/images/adidas1.jpg">
-					<h3>Adidas F50 RED</h3>
-					<h5>Rp. 300.000,- / Rp. 250.000(Grosir)</h5>
-					<p>Barang memiliki asuransi. Tersedia <strong>100 stok barang. </strong> Kondisi barang <strong>BARU.</strong></p>
-					<a href="buy-product.html" class="btn btn-lg btn-danger">Beli Sekarang</a>
-					</div>
-				</div>
-				 <div class="col-md-4">
-					<div class="thumbnail">
-					<img src="assets/images/adidas1.jpg">
-					<h3>Adidas F50 RED</h3>
-					<h5>Rp. 300.000,- / Rp. 250.000(Grosir)</h5>
-					<p>Barang memiliki asuransi. Tersedia <strong>100 stok barang. </strong> Kondisi barang <strong>BARU.</strong></p>
-					<a href="buy-product.html" class="btn btn-lg btn-danger">Beli Sekarang</a>
-					</div>
-				</div>
-				 <div class="col-md-4">
-					<div class="thumbnail">
-					<img src="assets/images/adidas1.jpg">
-					<h3>Adidas F50 RED</h3>
-					<h5>Rp. 300.000,- / Rp. 250.000(Grosir)</h5>
-					<p>Barang memiliki asuransi. Tersedia <strong>100 stok barang. </strong> Kondisi barang <strong>BARU.</strong></p>
-					<a href="buy-product.html" class="btn btn-lg btn-danger">Beli Sekarang</a>
-					</div>
-				</div>
+				
 				<div class="col-md-12">
 					<br>
 					<a href="#" class="btn-trans-red">Load More ...</a>
@@ -83,8 +113,38 @@
 
 		</div>
 	</div>		 
-	  
+
 <?php
-	include('login.php');
 	include('footer.php');
 ?>
+<div class="modal fade" id="loginModal" role="dialog">
+    <div class="modal-dialog">
+    
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">Login</h3>
+        </div>
+        <div class="modal-body">
+         
+          <form action="login.php" method="post">
+            <div class="form-group">	
+			         <input type="email" name="email" class="form-control" id="email" placeholder="E-Mail">
+  			    </div>
+            <div class="form-group"> 
+               <input type="password" name="password" class="form-control" id="email" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <input type="submit" class="btn btn-danger" name="" value="Login">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+         
+         </div>
+        
+      </div>
+      
+    </div>
+  </div>

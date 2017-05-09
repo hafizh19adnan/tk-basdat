@@ -186,9 +186,7 @@ mark{
 #produk-shipped{
 	padding: 30px;
 }
-#produk-shipped .thumbnail{
-	padding: 10px;
-}
+
 .btn .btn-select{
 	border-radius: 1px;
 	border: none;
@@ -199,6 +197,11 @@ mark{
 #produk-shipped .dropdown .dropdown-menu{
 	width: 90%;
 }
+#produk-shipped .row .col-md-9 .thumbnail{
+	height: 480px;
+}
+.btn-grey
+
 .btn-trans-red{
 	background: transparent;
 	padding: 10px;
@@ -212,10 +215,19 @@ mark{
 	color: #fff;
 	margin: 0 auto;
 }
+.thumbnail{
+	padding: 20px;
+}
 .modal-content{
 	border-radius: 0px;
 }
+.content{
+	height: 180px;
 
+}
+#sel1{
+	margin-bottom: 5px;
+}
 #user-dashboard{
 	padding: 10px;
 	background: #fff;
