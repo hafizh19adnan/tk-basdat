@@ -1,7 +1,36 @@
 <?php
+	function connectDB(){
+		$connection = pg_connect("host=localhost dbname=hafizhrafizal user=postgres password=basdatkeren");
+		
+		if(!$connection) {
+		    echo 'Failed to Connect';
+		} 
+		
+        return $connection;
+	}
+	function login(){
+		$conn=connectDB();
+		$password='oJAJrvH';
+        $query = "SELECT * FROM tokokeren.PENGGUNA 
+        			WHERE password='$password' AND email NOT IN (SELECT email from TOKOKEREN.PELANGGAN)"; 
+
+        $result = pg_query($conn,$query); 
+        if (!$result) { 
+            echo "Problem with query " . $query . "<br/>"; 
+            echo pg_last_error(); 
+            exit(); 
+        } 
+
+       while ($row = pg_fetch_assoc($result)) {
+		  
+		  echo "<p>".$row['email']."</p>";
+		}
+	}
+	
+	connectDB();
 	include('header.php');
 	include('navbar-default.php');
-
+	
 ?>
 	<div class="row" id="headline">
 		<div class="container">
@@ -82,8 +111,40 @@
 			</div>
 		</div>
 	</div>
+<div class="modal fade" id="loginModal" role="dialog">
+    <div class="modal-dialog">
+    
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">Login</h3>
+        </div>
+        <div class="modal-body">
+         
+          <form action="login.php" method="post">
+            <div class="form-group">	
+			         <input type="email" name="email" class="form-control" id="email" placeholder="E-Mail">
+  			    </div>
+            <div class="form-group"> 
+               <input type="password" name="password" class="form-control" id="email" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <input type="submit" class="btn btn-danger" name="" value="Login">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+         
+         </div>
+        
+      </div>
+      
+    </div>
+  </div>
+  
 <?php
-	include('login.php');
+	
 	include('footer.php');
 	
 ?>
