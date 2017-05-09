@@ -24,7 +24,7 @@
         </ul>
         <ul class="nav navbar-nav navbar-right menu-top-right" id="nav-right">
         
-            	<li><a href="../" class="navbar-white login" >  Logout</a></li>
+            	<li><a href="../user/logout.php" class="navbar-white login" >  Logout</a></li>
         	</ul>
       </div>
     </div>

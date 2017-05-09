@@ -1,7 +1,6 @@
 <?php
 	include('header.php');
 	include('navbar.php');
-
 ?>
 
 		<div id="headline-shipped">
@@ -41,7 +40,7 @@
 					
 					echo "
 					</div>
-					<a href='#' data-toggle='modal' data-target='#myModal'  class='btn btn-lg btn-danger' class='btn btn-lg btn-danger'>Beli Sekarang</a>
+					<a href='#' data-toggle='modal' data-id='".$row['kode_produk']."'data-target='#modalPulsa'  class='ref-modal-pulsa btn btn-lg btn-danger'>Beli Sekarang</a>
 					</div>
 					</div>";
 				}
@@ -58,7 +57,7 @@
 
 
   <!-- Modal -->
-<div class="modal fade" id="myModal" role="dialog">
+<div class="modal fade" id="modalPulsa" role="dialog">
     <div class="modal-dialog">
     
     <!-- Modal content-->
@@ -68,10 +67,11 @@
           <h4 class="modal-title">Masukan Data</h4>
         </div>
         <div class="modal-body">
-          <p>Kode Produk Terpilih : P000001</p>
+          <p ">Kode Produk Terpilih : <span id="kode-ref"></span></p>
           <form>
           	<div class="form-group">	
-			   	<input type="email" class="form-control" id="email" placeholder="Masukan No. HP ..."><BR>
+			   	<input type="text" class="form-control" id="email" value="" placeholder="Masukan No. HP ...">
+			   	<input type="text" class="form-control" id="kode-pulsa-post" value="" placeholder="Masukan No. HP ...">
 			   	<input type="submit" class="btn btn-danger" name="">
   			</div>
           </form>

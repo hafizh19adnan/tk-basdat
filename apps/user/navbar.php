@@ -5,7 +5,15 @@
 			<img src="../assets/images/logo.png" width="256px">
 			<div class="pull-right">
 				<br>
-				<h5>Halo, Hafizh!</h5>
+				<h4>Halo, <?php 
+          $email=$_SESSION['email'] ;
+          $conn= pg_connect("host=localhost dbname=hafizhrafizal user=postgres password=basdatkeren");
+            $query = "SELECT nama FROM TOKOKEREN.PENGGUNA  WHERE email = '$email' LIMIT 1";          
+            $result = pg_query($conn,$query);
+            while ($row = pg_fetch_assoc($result)) { 
+              $_SESSION['nama']= $row['nama'];
+              echo $row['nama'];
+            } ?> !</h4>
 			</div>
 		</div>
 		
@@ -33,7 +41,7 @@
         </ul>
         <ul class="nav navbar-nav navbar-right menu-top-right" id="nav-right">
         		<li><a href="dashboard.php" class="navbar-white login">  Dashboard</a></li>
-            	<li><a href="../" class="navbar-white login" >  Logout</a></li>
+            <li><a href="logout.php" class="navbar-white login" >  Logout</a></li>
 
         	</ul>
       </div>

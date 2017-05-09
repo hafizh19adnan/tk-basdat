@@ -1,7 +1,10 @@
 <?php
 	include('header.php');
 	include('navbar.php');
-
+	if(!isset($_SESSION['email'])){
+		$_SESSION['message']="Login Dulu Bos!";
+		header("location: ../index.php");
+	}
 ?>
 	<div class="row" id="headline">
 		<div class="container">

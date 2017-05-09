@@ -1,19 +1,36 @@
 <?php
-	function connectDB(){
-		$connection = pg_connect("host=localhost dbname=hafizhrafizal user=postgres password=basdatkeren");
-		
-		if(!$connection) {
-		    echo 'Failed to Connect';
-		} 
-		
-        return $connection;
-	}
 	
-	connectDB();
 	include('header.php');
 	include('navbar-default.php');
-	
+	if (isset($_SESSION['message'])) {
+        if ($_SESSION['message'] == "Login Dulu Bos!" || $_SESSION['message'] == "Login Gagal Bos!") {
+            echo "<div class='alert alert-danger text-center alert-dismissible fade in' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>".$_SESSION['message']."</div>";
+        }
+
+
+        unset($_SESSION['message']);
+    }
+    if(isset($_SESSION['email'])){
+    	$conn= pg_connect("host=localhost dbname=hafizhrafizal user=postgres password=basdatkeren");
+    	$email = $_SESSION['email'];
+    	$query1 = "SELECT * FROM tokokeren.PENGGUNA 
+            WHERE email=$email AND email NOT IN (SELECT email FROM tokokeren.PELANGGAN) ";
+		$query2 = "SELECT * FROM tokokeren.PENGGUNA 
+		            WHERE email=$email AND email IN (SELECT email FROM tokokeren.PELANGGAN) "; 
+
+		$admin = pg_num_rows(pg_query($conn,$query1));
+		$user = pg_num_rows(pg_query($conn,$query2));
+
+		if($admin>=1){
+		    header("location:admin");       
+		}else{
+		    
+		    header("location:user");
+		   
+		}
+    }
 ?>
+
 	<div class="row" id="headline">
 		<div class="container">
 			<div class="col-xs-6">

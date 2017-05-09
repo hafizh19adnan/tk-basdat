@@ -12,10 +12,18 @@
 			</div>	
 			<div class="col-md-8">
 				<br><br><br>
-				<h2>Hafizh Rafizal Adnan</h2><br>
-				<h4>hafizh19adnan@gmail.com</h4>
-				<h5>Situbondo, 11 April 1997</h5>
-				<h5>Perum Panji Permai Blok MM 06, Situbondo</h5>
+				<?php 
+		          $email=$_SESSION['email'] ;
+		          $conn= pg_connect("host=localhost dbname=hafizhrafizal user=postgres password=basdatkeren");
+		            $query = "SELECT * FROM TOKOKEREN.PENGGUNA  WHERE email = '$email' LIMIT 1";          
+		            $result = pg_query($conn,$query);
+		            while ($row = pg_fetch_assoc($result)) { 
+		              
+		              echo "<h2>".$row['nama']."</h2>
+							<h4>".$row['email']."</h4>
+							<h5>".$row['tgl_lahir']."</h5>
+							<h5>".$row['alamat']."</h5>";
+		            } ?>
 				<h5><strong>Total Transaksi : 2</strong></h5>
 				<button class="btn btn-primary">Edit Profile</button>
 			</div>
@@ -46,37 +54,32 @@
 						        <th>Action</th>
 						      </tr>
 						    </thead>
-						    <tbody>
-						      <tr>
-						        <td>V001</td>
-						        <td>pULSA 3 4G</td>
-						        <td>04/04/2017</td>
-						        <td>SUDAH BAYAR</td>
-						        <td>Rp. 12.000,-</td>
-						        <td>10</td>
-						        <td>089123823789193</td>
-						        <td><button class="btn btn-sm btn-success">Ulas</button></td>
-						      </tr>
-						      <tr>
-						        <td>V001</td>
-						        <td>pULSA 3 4G</td>
-						        <td>04/04/2017</td>
-						        <td>SUDAH BAYAR</td>
-						        <td>Rp. 12.000,-</td>
-						        <td>10</td>
-						        <td>089123823789193</td>
-						        <td><button class="btn btn-sm btn-success">Ulas</button></td>
-						      </tr>
-						      <tr>
-						        <td>V001</td>
-						        <td>pULSA 3 4G</td>
-						        <td>04/04/2017</td>
-						        <td>SUDAH BAYAR</td>
-						        <td>Rp. 12.000,-</td>
-						        <td>10</td>
-						        <td>089123823789193</td>
-						        <td><button class="btn btn-sm btn-success">Ulas</button></td>
-						      </tr>
+						    <tbody>						      
+						      
+						      <?php 
+					          $email=$_SESSION['email'] ;
+					          $conn= pg_connect("host=localhost dbname=hafizhrafizal user=postgres password=basdatkeren");
+					            $query = "SELECT * FROM TOKOKEREN.TRANSAKSI_PULSA  WHERE email_pembeli = '$email'";          
+					            $result = pg_query($conn,$query);
+					            $pulsa_trans = pg_num_rows($result);
+					            if($pulsa_trans==0){
+					            	echo "<tr><td>Transaksi Tidak Ditemukan</td></tr>";
+					            }else{
+					            	 while ($row = pg_fetch_assoc($result)) { 
+					              
+							              echo "<tr>
+								        <td>".$row['no_invoice']."</td>
+								        <td>".$row['kode_produk']."</td>
+								        <td>".$row['tanggal']."</td>
+								        <td>".$row['status']."</td>
+								        <td>".$row['total_bayar']."</td>
+								        <td>".$row['nominal']."</td>
+								        <td>".$row['nomor']."</td>
+								        <td><button class='btn btn-sm btn-success'>Ulas</button></td>
+								      </tr>";
+							            }
+					            }
+					            ?>
 						    </tbody>
 						  	</table>
 						  </div>
@@ -100,42 +103,33 @@
 						      </tr>
 						    </thead>
 						    <tbody>
-						      <tr>
-						        <td>V001</td>
-						        <td>Messiah Shop</td>
-						        <td>04/04/2017</td>
-						        <td>SUDAH BAYAR</td>
-						        <td>Rp. 120.000,-</td>
-						        <td>Perumnas Panji Permai Blok MM 06, Situbondo</td>
-						        <td>30.000</td>
-						        <td>DKC0398BDASJKD</td>
-						        <td>JNE Reguler</td>
-						        <td><button class="btn btn-sm btn-success">Ulas</button></td>
-						      </tr>
-						       <tr>
-						        <td>V001</td>
-						        <td>Messiah Shop</td>
-						        <td>04/04/2017</td>
-						        <td>SUDAH BAYAR</td>
-						        <td>Rp. 120.000,-</td>
-						        <td>Perumnas Panji Permai Blok MM 06, Situbondo</td>
-						        <td>30.000</td>
-						        <td>DKC0398BDASJKD</td>
-						        <td>JNE Reguler</td>
-						        <td><button class="btn btn-sm btn-success">Ulas</button></td>
-						      </tr>
-						       <tr>
-						        <td>V001</td>
-						        <td>Messiah Shop</td>
-						        <td>04/04/2017</td>
-						        <td>SUDAH BAYAR</td>
-						        <td>Rp. 120.000,-</td>
-						        <td>Perumnas Panji Permai Blok MM 06, Situbondo</td>
-						        <td>30.000</td>
-						        <td>DKC0398BDASJKD</td>
-						        <td>JNE Reguler</td>
-						        <td><button class="btn btn-sm btn-success">Ulas</button></td>
-						      </tr>
+						    <?php 
+					          $email=$_SESSION['email'] ;
+					          $conn= pg_connect("host=localhost dbname=hafizhrafizal user=postgres password=basdatkeren");
+					            $query = "SELECT * FROM TOKOKEREN.TRANSAKSI_SHIPPED  WHERE email_pembeli = '$email'";          
+					            $result = pg_query($conn,$query);
+					            $pulsa_trans = pg_num_rows($result);
+					            if($pulsa_trans==0){
+					            	echo "<tr><td>Transaksi Tidak Ditemukan</td></tr>";
+					            }else{
+					            	 while ($row = pg_fetch_assoc($result)) { 
+					              
+							              echo "<tr>
+									        <td>".$row['no_invoice']."</td>
+									        <td>".$row['nama_toko']."</td>
+									        <td>".$row['waktu_bayar']."</td>
+									        <td>".$row['status']."</td>
+									        <td>Rp. ".$row['total_bayar']."</td>
+									        <td>".$row['alamat_kirim']."</td>
+									        <td>Rp. ".$row['biaya_kirim']."</td>
+									        <td>".$row['no_resi']."</td>
+									        <td>".$row['nama_jasa_kirim']."</td>
+									        <td><button class='btn btn-sm btn-success'>Ulas</button></td>
+									      </tr>";
+							            }
+					            }
+					            ?>
+						      
 						      
 						    </tbody>
 						  </table>

@@ -225,6 +225,9 @@ mark{
 	height: 180px;
 
 }
+#kode-pulsa-post{
+	visibility: hidden;
+}
 #sel1{
 	margin-bottom: 5px;
 }
