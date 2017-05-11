@@ -41,7 +41,7 @@
 					
 					echo "
 					</div>
-					<a href='#' data-toggle='modal' data-target='#myModal'  class='btn btn-lg btn-danger' class='btn btn-lg btn-danger'>Beli Sekarang</a>
+					<a href='#' data-toggle='modal' data-target='#pop-login'  class='btn btn-lg btn-danger'>Beli Sekarang</a>
 					</div>
 					</div>";
 				}
@@ -56,29 +56,6 @@
 
 
   <!-- Modal -->
-<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-    <!-- Modal content-->
-    <div class="modal-content">
-        <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Masukan Data</h4>
-        </div>
-        <div class="modal-body">
-          <p>Kode Produk Terpilih : P000001</p>
-          <form>
-          	<div class="form-group">	
-			   	<input type="email" class="form-control" id="email" placeholder="Masukan No. HP ..."><BR>
-			   	<input type="submit" class="btn btn-danger" name="">
-  			</div>
-          </form>
-        </div>
-        
-      </div>
-      
-    </div>
-  </div>
   
 <div class="modal fade" id="loginModal" role="dialog">
     <div class="modal-dialog">
@@ -107,6 +84,23 @@
          
          </div>
         
+      </div>
+      
+    </div>
+  </div>
+<div class="modal fade" id="pop-login" role="dialog">
+    <div class="modal-dialog">
+    
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">Warning!</h3>
+        </div>
+        <div class="modal-body">
+        <h4>Sorry, You need to login first before continue</h4>
+         
+        </div>       
       </div>
       
     </div>

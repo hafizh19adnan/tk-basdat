@@ -13,10 +13,12 @@ $admin = pg_num_rows(pg_query($conn,$query1));
 $user = pg_num_rows(pg_query($conn,$query2));
 
 if($admin==1){
+    $_SESSION['role']='admin';
     $_SESSION['email']=$email;
     header("location:admin");       
 }else{
     if($user==1){
+        $_SESSION['role']='user';
         $_SESSION['email']=$email;
         header("location:user");
     }else{

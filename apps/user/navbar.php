@@ -11,7 +11,7 @@
             $query = "SELECT nama FROM TOKOKEREN.PENGGUNA  WHERE email = '$email' LIMIT 1";          
             $result = pg_query($conn,$query);
             while ($row = pg_fetch_assoc($result)) { 
-              $_SESSION['nama']= $row['nama'];
+              
               echo $row['nama'];
             } ?> !</h4>
 			</div>

@@ -1,10 +1,9 @@
 <?php
 	include('header.php');
 	include('navbar-default.php');
-
+	
 ?>
-  
-	<div id="headline-shipped">
+  	<div id="headline-shipped">
 		<div class="container">
 			<h1>Shipped Product</h1>
 			<div class="col-xs-6"></div>
@@ -15,9 +14,9 @@
 				<div class="col-md-3">
 					<div class="thumbnail">
 						<h3>Filter Produk</h3>
-						<form action="product.php" id="filter-toko">
-						   <select name="pilih_toko" class="form-control btn btn-default" id="sel1">
-						   	<option>Semua Toko</option>
+						<form action="product.php" method="post" id="filter-toko">
+						   <select name="toko" class="form-control btn btn-default" id="sel1">
+						   	<option >Semua Toko</option>
 						    <?php
 							    $conn= pg_connect("host=localhost dbname=hafizhrafizal user=postgres password=basdatkeren");
 				        		$query = "SELECT nama FROM Tokokeren.Toko ";   			 
@@ -32,11 +31,10 @@
 						        }
 						    ?>
 						     </select>
-						     <input type="submit" name="" value="Pilih Toko" class="btn btn-danger">	    
+						     <input type="submit" name="submit" class="btn btn-danger">	    
 						</form>	
 						<form action="product.php" id="filter-toko">
-						   <select name="pilih_toko" class="form-control btn btn-default" id="sel1">
-						   	<option>Semua Kategori</option>
+						   <select name="pilih_toko" class="form-control btn btn-default" id="sel1" onchange=showSub(this.value)>
 						    <?php
 							    $conn= pg_connect("host=localhost dbname=hafizhrafizal user=postgres password=basdatkeren");
 				        		$query = "SELECT nama FROM Tokokeren.Kategori_Utama ";   			 
@@ -46,25 +44,28 @@
 						        }
 						    ?>
 						     </select>
-						     <select name="pilih_toko" class="form-control btn btn-default" id="sel1">
+						     <select name="pilih_toko" class="form-control btn btn-default" id="sel2">
 						   	<option>Semua Sub-Kategori</option>
-						    <?php
-							    $conn= pg_connect("host=localhost dbname=hafizhrafizal user=postgres password=basdatkeren");
-				        		$query = "SELECT nama FROM Tokokeren.sub_kategori ";   			 
-						        $result = pg_query($conn,$query); 
-						        while ($row = pg_fetch_assoc($result)) {
-						        	echo "<option>".$row['nama']."</option>";
-						        }
-						    ?>
+						   
 						     </select>
 						     <input type="submit" name="" value="Ubah Kategori" class="btn btn-danger">	    
 						</form>	
 					</div>
 				</div>
 				<div class="col-md-9">
-					<?php 
+				<?php 
+
 				$conn= pg_connect("host=localhost dbname=hafizhrafizal user=postgres password=basdatkeren");
-        		$query = "SELECT * FROM tokokeren.SHIPPED_PRODUK S, tokokeren.PRODUK P WHERE P.kode_produk = S.kode_produk ";   			 
+				
+				if(isset($_POST['toko'])){
+					echo "<h4>Menampilkan Produk dari Toko <strong>".$_POST['toko']."</strong></h4>";
+					$toko = $_POST['toko'];
+					$query = "SELECT * FROM tokokeren.SHIPPED_PRODUK S, tokokeren.PRODUK P WHERE S.nama_toko = '$toko' AND P.kode_produk = S.kode_produk" ;
+					
+				}else{
+					$query = "SELECT * FROM tokokeren.SHIPPED_PRODUK S, tokokeren.PRODUK P WHERE P.kode_produk = S.kode_produk ";	
+				}
+        		   			 
 		        $result = pg_query($conn,$query); 
 		       
 
@@ -92,7 +93,7 @@
 					
 					echo "
 					</div>
-					<a href='#' class='btn btn-lg btn-danger'>Beli Sekarang</a>
+					<a href='#' data-toggle='modal' data-target='#pop-login'  class='btn btn-lg btn-danger'>Beli Sekarang</a>
 					</div>
 					</div>";
 				}
@@ -117,6 +118,23 @@
 <?php
 	include('footer.php');
 ?>
+<div class="modal fade" id="pop-login" role="dialog">
+    <div class="modal-dialog">
+    
+    <!-- Modal content-->
+    <div class="modal-content">
+        <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h3 class="modal-title">Warning!</h3>
+        </div>
+        <div class="modal-body">
+        <h4>Sorry, You need to login first before continue</h4>
+         
+        </div>       
+      </div>
+      
+    </div>
+  </div>
 <div class="modal fade" id="loginModal" role="dialog">
     <div class="modal-dialog">
     

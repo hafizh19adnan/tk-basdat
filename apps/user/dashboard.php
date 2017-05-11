@@ -59,7 +59,7 @@
 						      <?php 
 					          $email=$_SESSION['email'] ;
 					          $conn= pg_connect("host=localhost dbname=hafizhrafizal user=postgres password=basdatkeren");
-					            $query = "SELECT * FROM TOKOKEREN.TRANSAKSI_PULSA  WHERE email_pembeli = '$email'";          
+					           $query = "SELECT no_invoice, nama, tanggal, status, total_bayar, nominal, nomor FROM TOKOKEREN.PRODUK P, TOKOKEREN.TRANSAKSI_PULSA T WHERE P.kode_produk = T.kode_produk AND T.email_pembeli = '$email'";          
 					            $result = pg_query($conn,$query);
 					            $pulsa_trans = pg_num_rows($result);
 					            if($pulsa_trans==0){
@@ -69,7 +69,7 @@
 					              
 							              echo "<tr>
 								        <td>".$row['no_invoice']."</td>
-								        <td>".$row['kode_produk']."</td>
+								        <td>".$row['nama']."</td>
 								        <td>".$row['tanggal']."</td>
 								        <td>".$row['status']."</td>
 								        <td>".$row['total_bayar']."</td>

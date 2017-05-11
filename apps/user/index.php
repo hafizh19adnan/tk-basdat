@@ -5,6 +5,10 @@
 		$_SESSION['message']="Login Dulu Bos!";
 		header("location: ../index.php");
 	}
+	if($_SESSION['role']==='admin'){
+		header("location: ../admin/index.php");
+	}
+;
 ?>
 	<div class="row" id="headline">
 		<div class="container">

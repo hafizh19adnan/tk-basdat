@@ -53,9 +53,10 @@
 							</div>
 							<div class="col-md-12">
 								<br>
-								<button id="register-form" class="btn btn-success">DAFTAR</button>			<br>			
+								<button id="register-form" class="btn btn-success">DAFTAR</button><BR><BR><br>			
 							</div>
 						</form>
+
 			</div>
 			
 		</div>
