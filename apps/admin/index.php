@@ -9,6 +9,14 @@
 	if($_SESSION['role']==='user'){
 		header("location: ../user/index.php");
 	}
+	if (isset($_SESSION['message'])) {
+        if ($_SESSION['message'] =="Promo Berhasil Ditambahkan") {
+            echo "<div class='alert alert-success text-center alert-dismissible fade in' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>".$_SESSION['message']."</div>";
+        }
+
+
+        unset($_SESSION['message']);
+    }
 ?>
 
 <div id="admin">
