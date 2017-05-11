@@ -26,23 +26,30 @@
 						<div class="col-md-6">
 						<label for="sub-code">Kode subkategori:</label>
 					    <input type="text" class="form-control" id="sub-code">
+						</div>
 					</div>
 					<div class="form-group">
 					 	<div class="col-md-6">
 					 		<label for="sub-name">Nama Subkategori:</label>
 					    	<input type="text" class="form-control" id="sub-name"><BR>
 					 	</div> 
-						</div>
 					</div>
-					<div class="col-md-12" align="left">
-						<button type="button" class="btn btn-default">
-						<span class="glyphicon glyphicon-plus"></span>Tambah Subkategori
-					</button>
-					</div>
+				</div>
+					
 				<div class="col-md-12">
+					<button type="button" class="btn btn-default" id="add-subcat">
+					<span class="glyphicon glyphicon-plus"></span>Tambah Subkategori
+					</button>
+					<br>
+					
+				</div>
+				<div class="col-md-12">
+					
 					<br>
 					<button id="cat-form" class="btn btn-success">SUBMIT</button>							
 				</div>
 			</form>		
 	</div>	
 </div>
+</body>
+<script type="text/javascript" src="../assets/js/app.js"></script>
