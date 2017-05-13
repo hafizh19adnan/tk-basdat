@@ -11,9 +11,9 @@ if(isset($_POST['submit'])){
 		$_SESSION['message'] ="Jasa Kirim Berhasil Ditambahkan";
 		header("location: create-shipping.php");	
 	}else{
-		$errormessage = pg_last_error(); 
-	    echo "Error with query: " . $errormessage; 
+	
+	    $_SESSION['message'] = "Nama Jasa Kirim Sudah Ada";
+	    header("location: create-shipping.php");
 	    exit(); 
 	} 
-
 }

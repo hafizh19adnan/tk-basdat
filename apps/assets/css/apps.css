@@ -235,6 +235,9 @@ mark{
 	padding: 10px;
 	background: #fff;
 }
+#hidden-input{
+	display: none;
+}
 .full .btn{
 	width: 100%;
 	display: block;

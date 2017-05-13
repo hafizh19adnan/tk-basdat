@@ -24,7 +24,6 @@
 							<h5>".$row['tgl_lahir']."</h5>
 							<h5>".$row['alamat']."</h5>";
 		            } ?>
-				<h5><strong>Total Transaksi : 2</strong></h5>
 				<button class="btn btn-primary">Edit Profile</button>
 			</div>
 			<div class="col-md-12">

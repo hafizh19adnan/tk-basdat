@@ -70,7 +70,7 @@
           <p ">Kode Produk Terpilih : <span id="kode-ref"></span></p>
           <form action="proses-pulsa.php" method="post">
           	<div class="form-group">	
-			   	<input type="text" name="nomer_hp" class="form-control" id="email" value="" placeholder="Masukan No. HP ...">
+			   	<input type="text" name="nomer_hp" class="form-control" id="email" value="" placeholder="Masukan Nomer HP/Token">
 			   	<input type="text" class="form-control" id="kode-pulsa-post" value="" name="kode_produk">
 			   	<input type="submit" class="btn btn-danger" name="">
   			</div>

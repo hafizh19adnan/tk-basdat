@@ -13,10 +13,13 @@ $(document).ready(function(){
 		counter++;
 		$('#subcat').append("<div class='col-md-12'><label>Subkategori "+counter+"</label>"+
 			"</div><div class='form-group'><div class='col-md-6'><label for='sub-code'>Kode subkategori:</label>"+
-			"<input type='text' class='form-control' id='sub-code'></div><div class='form-group'><div class='col-md-6'>"+
-			"<label for='sub-name'>Nama Subkategori:</label><input type='text' class='form-control' id='sub-name'><BR>"+
-			"</div></div></div>")
+			"<input maxlength='5' required type='text' class='form-control' id='sub-code' name='sub-code-"+counter+"'></div><div class='form-group'><div class='col-md-6'>"+
+			"<label for='sub-name'>Nama Subkategori:</label><input  required type='text' class='form-control' name='sub-name-"+counter+"'id='sub-name'><BR>"+
+			"</div></div></div>");
+		$('#hidden-input').val(counter);
+		
 	});
+	
 });
 
 function showSub(str){

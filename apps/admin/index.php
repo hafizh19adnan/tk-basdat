@@ -4,18 +4,21 @@
 
 	if(!isset($_SESSION['email'])){
 		$_SESSION['message']="Login Dulu Bos!";
-		header("location: ../index.php");
+		header("location: ../");
 	}
+
 	if($_SESSION['role']==='user'){
 		header("location: ../user/index.php");
 	}
+
 	if (isset($_SESSION['message'])) {
-        if ($_SESSION['message'] =="Promo Berhasil Ditambahkan") {
+        if ($_SESSION['message'] =="Promo Berhasil Ditambahkan" || $_SESSION['message'] =="Kategori Berhasil Ditambahkan") {
             echo "<div class='alert alert-success text-center alert-dismissible fade in' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>".$_SESSION['message']."</div>";
+            unset($_SESSION['message']);
         }
 
 
-        unset($_SESSION['message']);
+        
     }
 ?>
 
@@ -23,7 +26,7 @@
 	<br><br>
 	<h1 class="text-center">Admin Dashboard</h1><br><br>
 	<div class="container">
-		<div class="col-md-4">
+		<div class="col-md-3">
 			<div class="thumbnail">
 				<img src="../assets/images/xl.jpeg">
 				<div class="full">
@@ -31,7 +34,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-3">
 			<div class="thumbnail">
 				<img src="../assets/images/xl.jpeg">
 				<div class="full">
@@ -40,11 +43,20 @@
 				
 			</div>
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-3">
 			<div class="thumbnail">
 				<img src="../assets/images/xl.jpeg">
 				<div class="full">
 					<a href="create-shipping.php" class="btn btn-lg btn-danger">Create Shipping</a>
+				</div>
+			</div>
+			
+		</div>
+		<div class="col-md-3">
+			<div class="thumbnail">
+				<img src="../assets/images/xl.jpeg">
+				<div class="full">
+					<a href="#" class="btn btn-lg btn-primary">Create Shop</a>
 				</div>
 			</div>
 			

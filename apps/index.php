@@ -6,10 +6,10 @@
         if ($_SESSION['message'] == "Login Dulu Bos!" || $_SESSION['message'] == "Login Gagal Bos!") {
             echo "<div class='alert alert-danger text-center alert-dismissible fade in' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>".$_SESSION['message']."</div>";
         }
-
-
         unset($_SESSION['message']);
+
     }
+    
     if(isset($_SESSION['email'])){
     	$conn= pg_connect("host=localhost dbname=hafizhrafizal user=postgres password=basdatkeren");
     	$email = $_SESSION['email'];
