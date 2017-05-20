@@ -47,7 +47,7 @@
 			<div class="col-xs-12">
 				<label for="kategori">Kategori</label>
 				<select required name="kategori" class="form-control btn btn-default" id="sel1" onchange=showSub(this.value)>
-				<option>Pilih Kategori</option> 
+				<option></option> 
 			    <?php
 				    $conn= pg_connect("host=localhost dbname=hafizhrafizal user=postgres password=basdatkeren");
 	        		$query = "SELECT nama FROM Tokokeren.Kategori_Utama ";   			 
@@ -65,7 +65,7 @@
 			<BR>
 			<label for="sub-kategori">Sub Kategori</label>
 		    <select required name="sub_kategori" class="form-control btn btn-default" id="sel2">
-		   	<option>Pilih Sub-Kategori</option> 
+		   	<option></option> 
 		     </select><BR>
 		    </div>
 		</div>

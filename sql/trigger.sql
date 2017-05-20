@@ -3,11 +3,11 @@ RETURNS trigger AS
 $$
 BEGIN
 IF (TG_OP = 'INSERT') THEN
-	UPDATE SHIPPED_PRODUK SET stok=stok+1 WHERE kode_produk = NEW.kode_produk;
+	UPDATE SHIPPED_PRODUK SET stok=stok-NEW.kuantitas WHERE kode_produk = NEW.kode_produk;
 ELSIF (TG_OP='DELETE') THEN
-	UPDATE SHIPPED_PRODUK SET stok=stok-1 WHERE kode_produk = OLD.kode_produk;
+	UPDATE SHIPPED_PRODUK SET stok=stok+OLD.stok WHERE kode_produk = OLD.kode_produk;
 ELSIF (TG_OP='UPDATE') THEN
-	UPDATE SHIPPED_PRODUK SET stok=stok+(NEW.stok-OLD.stok) WHERE kode_produk=NEW.kode_produk;
+	UPDATE SHIPPED_PRODUK SET stok=stok+(NEW.kuantitas-OLD.stok) WHERE kode_produk=NEW.kode_produk;
 END IF;
 RETURN NEW;
 END;

@@ -10,9 +10,10 @@
 		header("location: ../admin/index.php");
 	}
 	if(isset($_SESSION['message'])){
-        if ($_SESSION['message'] =="Pendaftaran Berhasil" || $_SESSION['message'] =="Kategori Berhasil Ditambahkan") {
+        if ($_SESSION['message'] =="Pendaftaran Berhasil" || $_SESSION['message'] =="Kategori Berhasil Ditambahkan" || $_SESSION['message'] =="Review Berhasil Ditambahkan") {
             echo "<div class='alert alert-success text-center alert-dismissible fade in' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>".$_SESSION['message']."</div>";
         }
+        unset($_SESSION['message']);
     }
 ;
 ?>

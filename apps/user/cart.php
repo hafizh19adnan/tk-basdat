@@ -1,130 +1,139 @@
 <?php
+	include ('../connect.php');
     include('header.php');
     include('navbar.php');
+    $total_harga=0;
+    $total_berat=0;
+    $toko ="";
+    if(isset($_POST['submit'])){
+    	$email = $_SESSION['email'];
+		$kode_produk = $_GET['kode_produk'];
+		$berat = $_POST['berat'];
+		$kuantitas = $_POST['jumlah'];
+		$harga = $_GET['harga'];
+		$sub_total = $kuantitas * $harga;
+
+		$conn =pg_connect("host=localhost dbname=hafizhrafizal user=postgres password=basdatkeren");
+		$query = "INSERT INTO TOKOKEREN.KERANJANG_BELANJA (pembeli, kode_produk, berat, kuantitas, harga, sub_total ) VALUES ( '".$email."', '".$kode_produk."', ".$berat.", ".$kuantitas.", ".$harga.", ".$sub_total.")"; 
+		$result = pg_query($query);
+		 if (!$result) { 
+            echo "Problem with query " . $query . "<br/>"; 
+            echo pg_last_error(); 
+            exit(); 
+		} 
+		$_SESSION['message']='Ditambahkan ke Keranjang';
+    }
+    if (isset($_SESSION['message'])) {
+        if ($_SESSION['message'] == "Ditambahkan ke Keranjang") {
+            echo "<div class='alert alert-success text-center alert-dismissible fade in' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>".$_SESSION['message']."</div>";
+        }
+        if ($_SESSION['message'] == "Terjadi Kesalahan") {
+            echo "<div class='alert alert-danger text-center alert-dismissible fade in' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>".$_SESSION['message']."</div>";
+        }
+        unset($_SESSION['message']);
+
+    }
+
 ?> 
-
-	<div id="purchase">
-		<div class="row">
-			<div class="container">
-			<div id="detail-pembeli" class="col-md-7">
-				<div class="head-tab">
-			  		<ul class="nav nav-tabs">
-					  	<li class="active"><a data-toggle="tab" href="#home">Detail Pembelian</a></li>
-					  	<li><a data-toggle="tab" href="#home">Konfirmasi Data</a></li>
-					</ul>
-			  	</div>
-				<div class="tab-content">
-			    	<div id="home" class="tab-pane fade in active">
-						<form class="form">
-							<div class="form-group">
-							 	<div class="col-md-12">
-							 		<label for="email">Nama Lengkap</label>
-							    	<input type="email" class="form-control" id="email"><BR>
-							 	</div> 
-  							</div>
- 							<div class="form-group">
-								<div class="col-xs-6">
-								<label for="email">Email Pembeli</label>
-							    <input type="email" class="form-control" id="email">
-							</div>
-							<div class="col-xs-6">
-								<label for="email">No.Telpon / HP</label>
-							    <input type="email" class="form-control" id="email">
-							    <br>
-							</div>
-							<div class="col-xs-12">
-								<label for="email">Alamat Lengkap</label>
-							    <input type="textbox" class="form-control" id="email">
-							    <br>
-							</div>
-							<div class="col-xs-6">
-								<label for="email">Kabupaten/Kota</label>
-							    <input type="email" class="form-control" id="email">
-							</div>
-							<div class="col-xs-6">
-								<label for="email">Kode Pos</label>
-							    <input type="email" class="form-control" id="email">
-							</div>
-							<div class="col-md-12">
-								<br>
-								<div class="dropdown">
-								    <button class="btn  dropdown-toggle" type="button" data-toggle="dropdown">Pilh Jasa Kirim
-								    <span class="caret"></span></button>
-								    <ul class="dropdown-menu">
-								      <li><a href="#">TIKI Reguler</a></li>
-								      <li><a href="#">POS Indonesia</a></li>
-								      <li><a href="#">JNE Reguler</a></li>
-								    </ul>
-				 				</div>
-							</div>
-							<div class="col-md-12">
-								<br>
-								<input type="submit" name="" value="Update" class="btn btn-success">
-							</div>
-						</form>
-					</div>
-			    </div>
-			    </div>					
-				</div>
-				<div id="ringkasan-belanja" class="col-md-4">
-					<h3>Ringkasan Belanja</h3>
-					<h5>Total Harga		<span class="pull-right">Rp. 430.000,-</span></h5>
-					<h5>Biaya Kirim<span class="pull-right">Rp. 30.000,-</span></h5>
-					<h5><strong>Total Belanja<span class="pull-right">Rp. 460.000,-</span></strong></h5>
-					<button class="btn btn-danger">Checkout</button>
-				</div>
-			</div>
-			</div>
-		</div>
-	</div>
-
-	<div id="cart">
-		
-			<div class="container">
-			<div id="keranjang" class="col-md-7">
-				<div class="head-tab">
-			  		<ul class="nav nav-tabs">
-					  	<li class="active"><a data-toggle="tab" href="#home">Keranjang Belanja</a></li>
-					    
-					</ul>
-			  	</div>
-				<div class="tab-content">
-			    	<div id="home" class="tab-pane fade in active">
-			      		<div class="col-md-4">
-			      			<br>
-			      			<img src="../assets/images/adidas1.jpg" class="thumbnail img-responsive">	
-			      		</div>
-			      		<div class="col-md-8">
-			      			<br>
-			      			<h4>Adidas F50 Red Ori</h4>
-			      			<h5>P000001</h5>
-			      			<p>Berat : 1Kg</p>
-			      			<p>Kuantitas : 1</p>
-			      			<p>Harga Satuan : Rp. 230.000,-</p>
-			      			<p><strong>Sub Total : Rp. 230.000,-</strong></p>
-			      		</div>
-			      		<div class="col-md-4">
-			      			<br>
-			      			<img src="../assets/images/adidas1.jpg" class="thumbnail img-responsive">	
-			      		</div>
-			      		<div class="col-md-8">
-			      			<br>
-			      			<h4>Adidas F50 Red KW Thailand</h4>
-			      			<h5>P000001</h5>
-			      			<p>Berat : 1Kg</p>
-			      			<p>Kuantitas : 1</p>
-			      			<p>Harga Satuan : Rp. 200.000,-</p>
-			      			<p><strong>Sub Total : Rp. 200.000,-</strong></p>
-			      		</div>
-			      		
-					</div>
-			    </div>
-			     
-				</div>					
-				</div>
-				
-			</div>
-			</div>
-		</div>
-	</div>
+<div class="row">
+	<div class="container">
+	<div class="col-md-6">
+		<div class="container">
+	<br><br>
+	<div class="head-tab">
+  		<ul class="nav nav-tabs">
+		  	<h1>Daftar Belanja</h1>  
+		</ul>
+  	</div>
+	<div class="tab-content">
+		<div class="tab-pane fade in active">
+		<br>
+		<table class="table">
+		    <thead>
+		      <tr>
+		        <th>Kode Produk</th>
+		        <th>Nama Produk</th>
+		        <th>Berat</th>
+		        <th>Kuantitas</th>
+		        <th>Harga</th>
+		        <th>Sub Total</th>
+		   
+		       
+		      </tr>
+		    </thead>
+		    <tbody>						      
+		      
+		      <?php 
+	        
+	          $conn=pg_connect("host=localhost dbname=hafizhrafizal user=postgres password=basdatkeren");
+	           $query = "SELECT * FROM TOKOKEREN.KERANJANG_BELANJA K, TOKOKEREN.PRODUK P, TOKOKEREN.SHIPPED_PRODUK S WHERE K.kode_produk=P.kode_produk AND pembeli ='".$_SESSION['email']."' AND P.kode_produk=S.kode_produk";         
+	            $result = pg_query($conn,$query);
+	            $count_res = pg_num_rows($result);
+	            if($count_res==0){
+	            	echo "<tr><td>Keranjang Kosong. Kek Hati ini :(</td></tr>";
+	            }else{
+	            	 while ($row = pg_fetch_assoc($result)) { 
+	              
+			              echo "<tr>
+				        <td>".$row['kode_produk']."</td>
+				        <td>".$row['nama']."</td>
+				        <td>".$row['berat']."</td>
+				        <td>".$row['kuantitas']."</td>
+				        <td>".$row['harga']."</td>
+				        <td>".$row['sub_total']."</td>
+				        ";
+			        	$toko=$row['nama_toko'];
+			        	$total_berat=$total_berat+$row['berat'];
+			        	$total_harga=$total_harga+$row['harga'];
+			        }
+	            }
+	            ?>
+		    </tbody>
+		  	</table>
+			
+		</div>	
+    </div>
+</div>	</div>				
 	
+</div>
+<div class="row">
+	<div class="container">
+	<div class="col-md-6">
+		<div class="container">
+	<br>
+	<div class="head-tab">
+  		<ul class="nav nav-tabs">
+		  	<h1>Informasi Pengiriman</h1>  
+		</ul>
+  	</div>
+	<div class="tab-content">
+		<div class="tab-pane fade in active">
+		<br>
+			<form method="post" action="confirmation.php?harga=<?php echo $total_harga ?>&berat=<?php echo $total_berat;?>&toko=<?php echo $toko;?>">
+				<div class="form-group">
+				 		<label for="jasa-kirim">Jasa Kirim:</label>
+				    	<select required name="jasa_kirim" class="form-control " id="sel2">
+					   		<option></option>
+					   		<?php
+					   			$query = "SELECT * FROM TOKOKEREN.TOKO_JASA_KIRIM WHERE nama_toko='".$toko."'";
+					   			$execQuery = pg_query($query);
+					   			while($row=pg_fetch_assoc($execQuery)){
+					   				echo "<option>".$row['jasa_kirim']."</option>";
+					   			}
+					   		?> 
+					    </select>
+				<div class="form-group">
+					<label for="jasa-kirim">Alamat:</label>
+				   	<textarea required name="alamat" rows="4" class="form-control"></textarea>
+				</div>
+				<div class="form-group">
+				   	<input required type="submit" name="submit" class="btn btn-primary" value="Lanjutkan Proses">
+				</div>		    
+			</form>	
+		
+			
+		</div>	
+    </div>
+</div>					
+	
+</div>

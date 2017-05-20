@@ -3,6 +3,12 @@ $(document).on("click", ".ref-modal-pulsa", function () {
      $(".modal-body #kode-ref ").html( newId );
      $("#kode-pulsa-post ").val( newId );
 });
+$(document).on("click", ".ref-modal-list", function () {
+     var newId = $(this).data('id');
+     $(".modal-body #kode-ref ").html( newId );
+     
+});
+
 
 $(document).ready(function(){
 	var counter = 1;

@@ -20,7 +20,7 @@ if(isset($_POST['submit'])){
 	$num_promo_row = pg_num_rows(pg_query($queryRow))+1;
 	$id= generateId($num_promo_row);
 	
-	$query_promo = "INSERT INTO TOKOKEREN.PROMO( id, deskripsi, periode_awal, periode_akhir,
+	$query_promo = "INSERT INTO TOKOKEREN.PROMO (id, deskripsi, periode_awal, periode_akhir,
 kode) VALUES ( '".$id."', '".$deskripsi."', '".$periode_awal."', '".$periode_akhir."', '".$kode."')";
 
 	$resultInsert = pg_query($query_promo);

@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 $conn= pg_connect("host=localhost dbname=hafizhrafizal user=postgres password=basdatkeren");
 
 $nomer = $_POST['nomer_hp'];
@@ -22,7 +23,7 @@ while ($row = pg_fetch_assoc($result)) {
 }
 
 $queryInsert = "INSERT INTO TOKOKEREN.TRANSAKSI_PULSA(
-no_invoice, tanggal, waktu_bayar, status, total_bayar, email_pembeli, nominal, nomor, kode_produk) VALUES ('".$no_invoice."', '".$tanggal."', '".$waktu."', 4, ".$harga.", '".$email."', ".$nominal.", ".$nomer.", '".$kode."')";
+no_invoice, tanggal, waktu_bayar, status, total_bayar, email_pembeli, nominal, nomor, kode_produk) VALUES ('".$no_invoice."', '".$tanggal."', '".$waktu."', 2, ".$harga.", '".$email."', ".$nominal.", ".$nomer.", '".$kode."')";
 
 $resultInsert = pg_query($queryInsert); 
 

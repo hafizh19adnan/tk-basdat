@@ -41,6 +41,7 @@
         </ul>
         <ul class="nav navbar-nav navbar-right menu-top-right" id="nav-right">
         		<li><a href="dashboard.php" class="navbar-white login">  Dashboard</a></li>
+            <li><a href="cart.php" class="navbar-white login">  Cart</a></li>
             <li><a href="logout.php" class="navbar-white login" >  Logout</a></li>
 
         	</ul>

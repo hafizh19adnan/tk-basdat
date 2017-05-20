@@ -1,6 +1,7 @@
 <?php
+include ('connect.php');
 session_start();
-$conn= pg_connect("host=localhost dbname=hafizhrafizal user=postgres password=basdatkeren");
+$conn= connectDB();
 $password=$_POST["password"];
 $email=$_POST["email"];
 

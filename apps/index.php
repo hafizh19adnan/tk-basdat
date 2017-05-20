@@ -11,7 +11,7 @@
     }
     
     if(isset($_SESSION['email'])){
-    	$conn= pg_connect("host=localhost dbname=hafizhrafizal user=postgres password=basdatkeren");
+    	$conn= connectDB();
     	$email = $_SESSION['email'];
     	$query1 = "SELECT * FROM tokokeren.PENGGUNA 
             WHERE email=$email AND email NOT IN (SELECT email FROM tokokeren.PELANGGAN) ";

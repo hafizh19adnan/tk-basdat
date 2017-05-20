@@ -1,4 +1,6 @@
-<?php session_start()?>
+<?php session_start();
+include ('connect.php');
+?>
 <html>
 <head>
 	<title>TokoKeren</title>

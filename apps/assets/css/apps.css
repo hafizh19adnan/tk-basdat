@@ -146,37 +146,6 @@ mark{
 	color: #000 ;
 }
 
-/*PURCHASE*/
-#purchase{
-	background: #eee;
-	padding: 40px;
-}
-#detail-pembeli{
-	background: #fff;
-	padding: 20px;
-}
-#ringkasan-belanja{
-	background: #fff;
-	margin-left: 20px;
-	padding: 20px; 
-}
-.form-control{
-	border-radius: 0px;
-}
-#cart{
-	background: #eee;
-	padding: 40px;
-}
-#keranjang{
-	background: #fff;
-	padding: 20px;
-	margin-top: -60px;
-}
-#detail-purchase{
-	background: #fff;
-	padding: 20px;
-}
-
 #headline-shipped{
 	padding: 50px;
 	background: url(../images/bg-header.jpg) fixed center no-repeat;
